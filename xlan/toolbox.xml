@@ -1,7 +1,7 @@
 <category id="category_custom" name="XLAN積木" colour="100">
   <category name="LED" colour="#9fa55b">
     <block type="blink">
-      <field name="led_pin">2</field>
+      <field name="value_pin">2</field>
     </block>
   </category>
   <category name="Air" colour="#a5745b">
