@@ -1,4 +1,4 @@
-<category id="category_custom" name="XLAN" colour="100">
+<category id="category_custom" name="XLAN積木" colour="100">
 	<block type="test">
 		<value name="pin">
 			<shadow type="math_number">
