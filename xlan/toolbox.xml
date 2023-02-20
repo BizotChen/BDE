@@ -1,4 +1,4 @@
-<category id="category_custom" name="%{BKY_MYBLOCKS}" colour="%{BKY_MYBLOCKS_HUE}">
+<category id="category_custom" name="XLAN" colour="100">
 	<block type="test">
 		<value name="pin">
 			<shadow type="math_number">
