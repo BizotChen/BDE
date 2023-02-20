@@ -1,7 +1,8 @@
 Blockly.Arduino['initled'] = function(block) {
   var init_led_pin = block.getFieldValue('init_led_pin');
-  Blockly.Arduino.setups_['initled_setup'] = 'pinMode(%1, OUTPUT);\n'.replace('%1', init_led_pin);
-  return;
+  Blockly.Arduino.setups_['initledsetup'] = 'pinMode(%1, OUTPUT);\n'.replace('%1', init_led_pin);
+  var code = ''
+  return code;
 };
 
 Blockly.Arduino['blinkled'] = function(block) {
