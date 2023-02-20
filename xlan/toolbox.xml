@@ -1,14 +1,15 @@
 <category id="category_custom" name="XLAN積木" colour="100">
-	<block type="test">
-		<value name="pin">
-			<shadow type="math_number">
-				<field name="NUM">2</field>
-			</shadow>
-		</value>
-		<value name="val">
-			<shadow type="math_number">
-				<field name="NUM">0</field>
-			</shadow>
-		</value>
-	</block>
+  <category name="LED" colour="#9fa55b">
+    <block type="blink">
+      <field name="led_pin">2</field>
+    </block>
+  </category>
+  <category name="Air" colour="#a5745b">
+    <block type="dht">
+      <field name="dht">11</field>
+    </block>
+    <block type="gethumidity"></block>
+    <block type="gettemperature"></block>
+  </category>
+  <category name="Motor" colour="#5b67a5"></category>
 </category>
