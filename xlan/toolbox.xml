@@ -1,6 +1,9 @@
-<category id="category_custom" name="XLAN積木" colour="100">
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="LED" colour="#9fa55b">
-    <block type="blink">
+    <block type="initled">
+      <field name="value_pin">2</field>
+    </block>
+    <block type="blinkled">
       <field name="value_pin">2</field>
     </block>
   </category>
@@ -12,4 +15,4 @@
     <block type="gettemperature"></block>
   </category>
   <category name="Motor" colour="#5b67a5"></category>
-</category>
+</xml>
