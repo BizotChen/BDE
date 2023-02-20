@@ -1,2 +1,2 @@
-Blockly.Msg["MYBLOCKS"] = "MyBlocks";
-Blockly.Msg["MYBLOCKS_HUE"] = "100";
+Blockly.Msg["BKY_MYBLOCKS"] = "MyBlocks";
+Blockly.Msg["BKY_MYBLOCKS_HUE"] = "100";
