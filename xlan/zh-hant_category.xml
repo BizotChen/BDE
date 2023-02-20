@@ -72,7 +72,7 @@
 
     
 
-  <meta name="request-id" content="C377:339B:19001A:3FE554:63F2FF4C" data-turbo-transient="true" /><meta name="html-safe-nonce" content="390ef5b10e8dd48cf2c51c8bc596edf8877b36adbc4c1584844f8a9a98dd2304" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9mdXN0eWxlcy93ZWJkdWluby90cmVlL21hc3Rlci9MaW5rSXQ3Njk3L0ZyYW5jZSIsInJlcXVlc3RfaWQiOiJDMzc3OjMzOUI6MTkwMDFBOjNGRTU1NDo2M0YyRkY0QyIsInZpc2l0b3JfaWQiOiIxMDUwMTg2OTIzNjM4Njc0MTk4IiwicmVnaW9uX2VkZ2UiOiJqYXBhbmVhc3QiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-turbo-transient="true" /><meta name="visitor-hmac" content="cfeaeaa1a3854170c71009337a1aa8d7b2a70cd4f7025242e9383e208cda0f22" data-turbo-transient="true" />
+  <meta name="request-id" content="C50C:4BF0:BEF81B:FAEBC9:63F3185D" data-turbo-transient="true" /><meta name="html-safe-nonce" content="390ef5b10e8dd48cf2c51c8bc596edf8877b36adbc4c1584844f8a9a98dd2304" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9mdXN0eWxlcy93ZWJkdWluby90cmVlL21hc3Rlci9MaW5rSXQ3Njk3L0ZyYW5jZSIsInJlcXVlc3RfaWQiOiJDNTBDOjRCRjA6QkVGODFCOkZBRUJDOTo2M0YzMTg1RCIsInZpc2l0b3JfaWQiOiIxMDUwMTg2OTIzNjM4Njc0MTk4IiwicmVnaW9uX2VkZ2UiOiJqYXBhbmVhc3QiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-turbo-transient="true" /><meta name="visitor-hmac" content="a51fa0d4efe7aa064edc47a64ba4fef9d7a7befd4ef9f52b5a9790c5b7c0fa31" data-turbo-transient="true" />
 
 
     <meta name="hovercard-subject-tag" content="repository:131685944" data-turbo-transient>
@@ -115,7 +115,7 @@
       <meta property="og:image" content="https://opengraph.githubassets.com/3794daf75581e834aa4e441c8f8b2900eddf87aed9032fa2aa3b7da6777b8654/fustyles/webduino" /><meta property="og:image:alt" content="Contribute to fustyles/webduino development by creating an account on GitHub." /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="600" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="webduino/zh-hant_category.xml at master · fustyles/webduino" /><meta property="og:url" content="https://github.com/fustyles/webduino" /><meta property="og:description" content="Contribute to fustyles/webduino development by creating an account on GitHub." />
       
     <link rel="assets" href="https://github.githubassets.com/">
-      <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/125847938/ws?session=eyJ2IjoiVjMiLCJ1IjoxMjU4NDc5MzgsInMiOjEwNTcwMzczNzUsImMiOjMyNTEyNjE0MDMsInQiOjE2NzY4Njk0NTh9--d197ca8980d2674aff65521195dab76edfa3e33200777c02ac68c892f067aa19" data-refresh-url="/_alive" data-session-id="db37e860f390db9d41a7e16659236bdd009b51da4d2ddd443eac1f2c5b52a2fb">
+      <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/125847938/ws?session=eyJ2IjoiVjMiLCJ1IjoxMjU4NDc5MzgsInMiOjEwNTcwMzczNzUsImMiOjM2MDc0MDAzNTUsInQiOjE2NzY4NzU4NzN9--a49802e3f5f36bd732d10a818a3e63d52662274a39bb371b4198865fc827c7fc" data-refresh-url="/_alive" data-session-id="db37e860f390db9d41a7e16659236bdd009b51da4d2ddd443eac1f2c5b52a2fb">
       <link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-d7c2fe14563a.js">
 
 
@@ -238,7 +238,7 @@
           spellcheck="false"
           autocomplete="off"
         >
-        <input type="hidden" value="12GDniP15XPNW1CkFebhn8hJgZyyPOYgHEj717hqpJo_fd2Fx3uKlSpy4ad9vF5MhzLsvWDaP5X9lJAnRgcRtw" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+        <input type="hidden" value="rOhaqHZP27wHKr1tSFCng2FOGf03SN7AbhrKH8We0F9E9ASzksG0WuADDG4gChhQLjV03OWuB3WPxqHvO_Nlcg" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
         <input type="hidden" class="js-site-search-type-field" name="type" >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" aria-hidden="true" class="mr-1 header-search-key-slash"><path fill="none" stroke="#979A9C" opacity=".4" d="M3.5.5h12c1.7 0 3 1.3 3 3v13c0 1.7-1.3 3-3 3h-12c-1.7 0-3-1.3-3-3v-13c0-1.7 1.3-3 3-3z"></path><path fill="#979A9C" d="M11.8 6L8 15.1h-.9L10.8 6h1z"></path></svg>
 
@@ -445,7 +445,7 @@
       <img class="avatar avatar-user" loading="lazy" decoding="async" src="https://avatars.githubusercontent.com/u/125847938?s=40&amp;v=4" width="20" height="20" alt="@BizotChen" />
       BizotChen
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="sRudPFo6BTlx2RGo_It0_zgYYZzJZLu25yepB_Xf8EZreFjfTBPVbVEU9tWCClkIhcL7-SVeSUzFPCtXwL1c2Q" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="OI8qxjOpiNrcYmbj_TB4l4pUbOvElPHD36l1QnvJ2sbi7O8lJYBYjvyvgZ6DsVVgN472jiiuAzn9svcSTqt2WQ" />
       <button
         type="submit"
         class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade d-md-none btn-link d-block width-full text-left"
@@ -480,7 +480,7 @@
     <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
         
 
-<notification-indicator data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6MTI1ODQ3OTM4IiwidCI6MTY3Njg2OTQ1OH0=--8f95225fb6c73843655d2730e5643a54c0742830715cc26085a7591f6c48838c" data-indicator-mode="none" data-tooltip-global="You have unread notifications" data-tooltip-unavailable="Notifications are unavailable at the moment." data-tooltip-none="You have no unread notifications" data-fetch-indicator-src="/notifications/indicator" data-fetch-indicator-enabled="true" data-view-component="true" class="js-socket-channel">
+<notification-indicator data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6MTI1ODQ3OTM4IiwidCI6MTY3Njg3NTg3M30=--fc295da81f8a0b2618ee4eeb2d5afbe44307dd77010d60e244ee0e1d3fbed3f4" data-indicator-mode="none" data-tooltip-global="You have unread notifications" data-tooltip-unavailable="Notifications are unavailable at the moment." data-tooltip-none="You have no unread notifications" data-fetch-indicator-src="/notifications/indicator" data-fetch-indicator-enabled="true" data-view-component="true" class="js-socket-channel">
   <a id="AppHeader-notifications-button" href="/notifications"
     class="Header-link notification-indicator position-relative tooltipped tooltipped-sw"
 
@@ -795,7 +795,7 @@
     <button aria-keyshortcuts="Control+Backspace" data-action="click:command-palette-input#onClear keypress:command-palette-input#onClear" data-target="command-palette-input.clearButton" id="command-palette-clear-button" hidden="hidden" type="button" data-view-component="true" class="btn-octicon command-palette-input-clear-button">      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x-circle-fill">
     <path fill-rule="evenodd" d="M2.343 13.657A8 8 0 1113.657 2.343 8 8 0 012.343 13.657zM6.03 4.97a.75.75 0 00-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 101.06 1.06L8 9.06l1.97 1.97a.75.75 0 101.06-1.06L9.06 8l1.97-1.97a.75.75 0 10-1.06-1.06L8 6.94 6.03 4.97z"></path>
 </svg>
-</button>    <tool-tip id="tooltip-37bb102d-24b8-4ece-9787-6fe3c2d17872" for="command-palette-clear-button" data-direction="w" data-type="label" data-view-component="true" class="sr-only position-absolute">Clear Command Palette</tool-tip>
+</button>    <tool-tip id="tooltip-6e9dc580-b276-46fe-92b1-9026fc535c0c" for="command-palette-clear-button" data-direction="w" data-type="label" data-view-component="true" class="sr-only position-absolute">Clear Command Palette</tool-tip>
 </div>
       </command-palette-input>
 
@@ -1659,7 +1659,7 @@
             </header>
 
             <div class="SelectMenu-list">
-              <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="NB2yxGX3y5nyXiWHkrfHAzs9SO7MX2UCuhSfI0Ydz4gxbhCmKjeW7EYDeR5CqgZ6wFhq82raUwe3_wcjaC5QFg" autocomplete="off" />
+              <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="G6Qo2bivESNGxb-P-0g8P44-8WIsStQI3_EtgG9dV7Ie14q7929MVvKY4xYrVf1GdVvTf4rP4g3SGrWAQW7ILA" autocomplete="off" />
 
                 <input type="hidden" name="repository_id" value="131685944">
 
@@ -1787,7 +1787,7 @@
           hidden
         >
           <div class="SelectMenu-modal notifications-component-dialog-modal overflow-visible">
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hGgCBEhTX1WZ5o8HiqZL-p9V6BCv-AUIPVKtfqCUyHWBG6BmB5MCIC27055au4qDZDDKDQl9Mw0wuTV-jqdX6w" autocomplete="off" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="3WxWPbaErcsWMb76g-d7lEIyF1hz39Wxs2NaTrwtsoDYH_Rf-UTwvqJs4mNT-rrtuVc1RdVa47S-iMJOkh4tHg" autocomplete="off" />
 
               <input type="hidden" name="repository_id" value="131685944">
 
@@ -1943,7 +1943,7 @@
     <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
 </svg>Fork
           <span id="repo-network-counter" data-pjax-replace="true" data-turbo-replace="true" title="36" data-view-component="true" class="Counter">36</span>
-</a>    <tool-tip id="tooltip-3a0c2636-e6f5-471e-940d-63c31b9e8451" for="fork-button" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">Fork your own copy of fustyles/webduino</tool-tip>
+</a>    <tool-tip id="tooltip-85f5ec2a-8d9b-49b2-b254-e7e49e8880a6" for="fork-button" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">Fork your own copy of fustyles/webduino</tool-tip>
 </div>
       <details group_item="true" id="my-forks-menu-131685944" data-view-component="true" class="details-reset details-overlay BtnGroup-parent d-inline-block position-relative">
               <summary aria-label="See your forks of this repository" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
@@ -1958,13 +1958,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-6d1e63">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-f55246">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-6d1e63"
+        id="filter-menu-f55246"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -2006,8 +2006,8 @@
 
   <div data-view-component="true" class="js-toggler-container js-social-container starring-container d-flex">
     <div data-view-component="true" class="starred BtnGroup flex-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/fustyles/webduino/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="iEgoWj9iGMiYP8vU84Mz-WeqZ1ji783Tzj6t7dxTcwK5h2qsxh9bqWPq16SF1ZhMrr6UNztQGFpjnneY9B__ug" autocomplete="off" />
-          <input type="hidden" value="vz9UJIyPw43zUnWuhSN1a1vTd4rzwMI-iP5T7w1dhxqO8BbSdfKA7AiHad7zdd7ekseE5Sp_F7clXomaJRELog" data-csrf="true" class="js-confirm-csrf-token" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/fustyles/webduino/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="ktgFSfDOwbni8pwB1hlf-tWRtuc2a6KblCDyJEaTkwKjF0e_CbOC2BkngHGgT_RPHIVFiO_UdxI5gChRbt8fug" autocomplete="off" />
+          <input type="hidden" value="Z2Mq6gfolX93Q3aXCHr1PnQTSF20DtfuEzNd0hwn-YpWrGgc_pXWHoyWaud-LF6LvQe7Mm2xAme-k4enNGt1Mg" data-csrf="true" class="js-confirm-csrf-token" />
         <input type="hidden" name="context" value="repository">
           <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:131685944,&quot;originating_url&quot;:&quot;https://github.com/fustyles/webduino/blob/master/LinkIt7697/France/zh-hant_category.xml&quot;,&quot;user_id&quot;:125847938}}" data-hydro-click-hmac="10040efb43ae242de7daf788a98ffda014eb843d3886192eec2cdc9251e1bf7b" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar" aria-label="Unstar this repository (50)" type="submit" data-view-component="true" class="rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
     <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
@@ -2027,13 +2027,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-a72aee">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-496725">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-a72aee"
+        id="filter-menu-496725"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -2054,7 +2054,7 @@
 </details>
 </div>
     <div data-view-component="true" class="unstarred BtnGroup flex-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/fustyles/webduino/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="RLrAleVkhn0_BrybdtvrvCsnlZaxfuu_JuOAC4GSa0n05R-4KmmQdX3dsI6YKV2ZuVl5hBmtXfvnfpSWs_J02Q" autocomplete="off" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/fustyles/webduino/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="l3KvIJ9bKriaVaHNjfsgroXknM19ETTH0Dph7IHu9VgnLXANUFY8sNiOrdhjCZaLF5pw39XCgoMRp3Vxs47qyA" autocomplete="off" />
         <input type="hidden" name="context" value="repository">
           <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:131685944,&quot;originating_url&quot;:&quot;https://github.com/fustyles/webduino/blob/master/LinkIt7697/France/zh-hant_category.xml&quot;,&quot;user_id&quot;:125847938}}" data-hydro-click-hmac="c9d36e5836227ca4f94be5ffd5af07b86deb2851f7ee5ccab219d7b50e2baed4" data-ga-click="Repository, click star button, action:blob#show; text:Star" aria-label="Star this repository (50)" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
     <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
@@ -2074,13 +2074,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-a72aee">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-496725">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-a72aee"
+        id="filter-menu-496725"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -2570,7 +2570,7 @@
     <div class="d-flex">
         
 <div class="ml-1" >
-  <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="BtnGroup-parent js-update-url-with-hash " data-turbo="false" action="/fustyles/webduino/edit/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="pdNx6kUuCxr5dJ3pvngnoYXbSroneS9IMwdgoJwYTqC466uF4oCXy6v7gMlzoDaxqcebaiS10W673Op24KPq1A" autocomplete="off" />
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="BtnGroup-parent js-update-url-with-hash " data-turbo="false" action="/fustyles/webduino/edit/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="j1CZ6ugCNve6h_J2lM3-8p5k7qBDs3WZIGglxhgO2KCSaEOFT6yqJugI71ZZFe_isng_cEB_i7-os68QZLV81A" autocomplete="off" />
       <button title="Fork this repository and edit the file" data-hotkey="e" data-disable-with="" type="submit" data-view-component="true" class="btn-sm BtnGroup-item btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-pencil">
     <path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path>
 </svg>
@@ -2580,7 +2580,7 @@
 </summary>    <div class="SelectMenu right-0">
       <div class="SelectMenu-modal width-full">
         <div class="SelectMenu-list SelectMenu-list--borderless py-2">
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="SelectMenu-item js-update-url-with-hash " data-turbo="false" action="/fustyles/webduino/edit/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="DYip0VVNVGJW6lW1Mo1kEzki1rNc6ow2TDaEF1TKwJwQsHO-8uPIswRlSJX_VXUDFT4HY18mchDE7Q7BKHFk6A" autocomplete="off" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="SelectMenu-item js-update-url-with-hash " data-turbo="false" action="/fustyles/webduino/edit/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hmIo7PfSkECh2c2tJl46K7i6PrY3gC5GPW1tXYasvD2bWvKDUHwMkfNW0I3rhis7lKbvZjRM0GC1tueL-hcYSQ" autocomplete="off" />
               <button title="Fork this repository and edit the file" type="submit" data-view-component="true" class="btn-invisible btn width-full d-flex flex-justify-between color-fg-default text-normal p-0">    <div class="mr-5">Edit this file</div>
               <div class="color-fg-muted">E</div>
 </button></form>
@@ -2627,7 +2627,7 @@
 </remote-clipboard-copy></div>
 
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" data-turbo="false" action="/fustyles/webduino/delete/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="xGJZxGRQDzCKo_ocwzwXK6nRq2xPfzo3BIt215dd1u2sRDnBrmdmDH3Kdg_OMhejo4EjBs2Vv4DZPKCR4af5XA" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" data-turbo="false" action="/fustyles/webduino/delete/master/LinkIt7697/France/zh-hant_category.xml" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5Yf6fm9srL4qKN8OqBjPCW9Tj3suS6aex0u-RNrSnJ6NoZp7pVvFgt1BUx2lFs-BZQMHEayhIyka_GgCrCizLw" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this repository and delete the file" data-disable-with>
               <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-trash">
