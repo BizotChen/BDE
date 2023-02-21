@@ -15,4 +15,4 @@
     <block type="gettemperature"></block>
   </category>
   <category name="Motor" colour="#5b67a5"></category>
-</xml>
+</category>
