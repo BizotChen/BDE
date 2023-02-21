@@ -1,4 +1,4 @@
-<category name="xlan" colour="#9fa55b">
+<category name="X-LAN積木" colour="#9fa55b">
   <category name="LED" colour="#9fa55b">
     <block type="initled">
       <field name="pin">2</field>
