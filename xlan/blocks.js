@@ -1,4 +1,4 @@
-Blockly.Blocks['initled'] = {
+Blockly.Blocks.initled = {
   init: function() {
     this.appendDummyInput()
         .appendField("Initial a LED at pin")
@@ -10,7 +10,7 @@ Blockly.Blocks['initled'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.Blocks['blinkled'] = {
+Blockly.Blocks.blinkled = {
   init: function() {
     this.appendDummyInput()
         .appendField("Blink a LED at pin")
