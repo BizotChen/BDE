@@ -1,4 +1,4 @@
-<category id="xlan" name="xlan" style="display: none">
+<category id="xlan" name="xlan">
   <category name="LED" colour="#9fa55b">
     <block type="initled">
       <field name="pin">2</field>
