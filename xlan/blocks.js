@@ -1,23 +1,26 @@
-Blockly.Blocks.initled = {
+Blockly.Blocks['mmshield_init'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Initial a LED at pin")
-        .appendField(new Blockly.FieldDropdown([["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"], ["13","13"]]), "pin");
+        .appendField("Initial MMShield as motor mode");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
-Blockly.Blocks.blinkled = {
+
+Blockly.Blocks['mmshield_move'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Blink a LED at pin")
-        .appendField(new Blockly.FieldDropdown([["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"], ["13","13"]]), "pin");
+        .appendField("Rotate motor")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "channel")
+        .appendField(new Blockly.FieldDropdown([["forward","FORWARD"], ["reverse","REVERSE"]]), "dir")
+        .appendField("at speed")
+        .appendField(new Blockly.FieldNumber(2048, 0, 4096), "speed");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");
   }

@@ -1,18 +1,10 @@
-<category name="X-LAN積木" colour="#9fa55b">
-  <category name="LED" colour="#9fa55b">
-    <block type="initled">
-      <field name="pin">2</field>
-    </block>
-    <block type="blinkled">
-      <field name="pin">2</field>
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="X-LAN積木" colour="#a5745b">
+    <block type="mmshield_init"></block>
+    <block type="mmshield_move">
+      <field name="channel">1</field>
+      <field name="dir">forward</field>
+      <field name="speed">2048</field>
     </block>
   </category>
-  <category name="Air" colour="#a5745b">
-    <block type="dht">
-      <field name="dht">11</field>
-    </block>
-    <block type="gethumidity"></block>
-    <block type="gettemperature"></block>
-  </category>
-  <category name="Motor" colour="#5b67a5"></category>
-</category>
+</xml>
