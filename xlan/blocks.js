@@ -1,4 +1,4 @@
-Blockly.Blocks['mmshield_init'] = {
+Blockly.Blocks.mmshield_init = {
   init: function() {
     this.appendDummyInput()
         .appendField("Initial MMShield as motor mode");
@@ -10,7 +10,7 @@ Blockly.Blocks['mmshield_init'] = {
   }
 };
 
-Blockly.Blocks['mmshield_move'] = {
+Blockly.Blocks.mmshield_move = {
   init: function() {
     this.appendDummyInput()
         .appendField("Rotate motor")

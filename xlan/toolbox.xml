@@ -1,10 +1,8 @@
-<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="X-LAN積木" colour="#a5745b">
-    <block type="mmshield_init"></block>
-    <block type="mmshield_move">
-      <field name="channel">1</field>
-      <field name="dir">forward</field>
-      <field name="speed">2048</field>
-    </block>
-  </category>
-</xml>
+<category name="X-LAN積木" colour="#a5745b">
+  <block type="mmshield_init"></block>
+  <block type="mmshield_move">
+    <field name="channel">1</field>
+    <field name="dir">forward</field>
+    <field name="speed">2048</field>
+  </block>
+</category>
