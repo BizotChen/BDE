@@ -14,3 +14,18 @@ Blockly.Arduino.mmshield_move = function(block) {
   var code = 'mm.RotateMotor(' + dropdown_channel + ', ' + dropdown_dir + ', ' + number_speed + ');\n';
   return code;
 };
+
+Blockly.Arduino.mmshield_servo_write = function(block) {
+  var number_pwm = block.getFieldValue('pwm');
+  var dropdown_channel = block.getFieldValue('channel');
+
+  var code = 'mm.WritePWM(' + dropdown_channel + ', ' + number_pwm + ');\n';
+  return code;
+};
+
+Blockly.Arduino.mmshield_servo_read = function(block) {
+  var dropdown_channel = block.getFieldValue('channel');
+
+  var code = 'mm.ReadPWM(' + dropdown_channel + ');\n';
+  return code;
+};

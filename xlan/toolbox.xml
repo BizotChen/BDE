@@ -5,4 +5,11 @@
     <field name="dir">forward</field>
     <field name="speed">2048</field>
   </block>
+  <block type="mmshield_servo_write">
+    <field name="pwm">375</field>
+    <field name="channel">1</field>
+  </block>
+  <block type="mmshield_servo_read">
+    <field name="channel">1</field>
+  </block>
 </category>
