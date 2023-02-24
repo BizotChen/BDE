@@ -59,6 +59,7 @@ Blockly.Blocks.mmshield_servo_read = {
     this.appendDummyInput()
         .appendField("Read pwm value from servo")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"]]), "channel");
+    this.setOutput(true, null);
     this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -186,11 +187,11 @@ Blockly.Blocks.mmshield_oled_display = {
   }
 };
 
-Blockly.Blocks.mmshield_oled_contrast = {
+Blockly.Blocks.mmshield_oled_brightness = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED contrast")
-        .appendField(new Blockly.FieldNumber(128, 0, 255), "contrast");
+        .appendField("Set OLED brightness")
+        .appendField(new Blockly.FieldNumber(128, 0, 255), "brightness");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
@@ -199,11 +200,11 @@ Blockly.Blocks.mmshield_oled_contrast = {
   }
 };
 
-Blockly.Blocks.mmshield_oled_brightness = {
+Blockly.Blocks.mmshield_oled_contrast = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED brightness")
-        .appendField(new Blockly.FieldNumber(128, 0, 255), "brightness");
+        .appendField("Set OLED contrast")
+        .appendField(new Blockly.FieldNumber(128, 0, 255), "contrast");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);

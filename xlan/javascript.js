@@ -33,7 +33,7 @@ Blockly.Arduino.mmshield_servo_write = function(block) {
 Blockly.Arduino.mmshield_servo_read = function(block) {
   var dropdown_channel = block.getFieldValue('channel');
 
-  var code = 'mm.ReadPWM(' + dropdown_channel + ')\n';
+  var code = 'mm.ReadPWM(' + dropdown_channel + ');\n';
   return code;
 };
 
@@ -95,16 +95,16 @@ Blockly.Arduino.mmshield_oled_display = function(block) {
   return code;
 };
 
-Blockly.Arduino.mmshield_oled_contrast = function(block) {
-  var number_contrast = block.getFieldValue('contrast');
-
-  var code = 'display.setContrast(' + number_contrast + ');\n';
-  return code;
-};
-
 Blockly.Arduino.mmshield_oled_brightness = function(block) {
   var number_brightness = block.getFieldValue('brightness');
 
   var code = 'display.setBrightness(' + number_brightness + ');\n';
+  return code;
+};
+
+Blockly.Arduino.mmshield_oled_contrast = function(block) {
+  var number_contrast = block.getFieldValue('contrast');
+
+  var code = 'display.setContrast(' + number_contrast + ');\n';
   return code;
 };
