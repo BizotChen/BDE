@@ -10,14 +10,27 @@ Blockly.Blocks.mmshield_init = {
   }
 };
 
-Blockly.Blocks.mmshield_move = {
+Blockly.Blocks.mmshield_rotate = {
   init: function() {
     this.appendDummyInput()
         .appendField("Rotate motor")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "channel")
         .appendField(new Blockly.FieldDropdown([["forward","FORWARD"], ["reverse","REVERSE"]]), "dir")
-        .appendField("at speed")
-        .appendField(new Blockly.FieldNumber(2048, 0, 4095), "speed");
+        .appendField("at pwm")
+        .appendField(new Blockly.FieldNumber(2048, 0, 4095), "pwm");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_stop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Stop motor")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "channel");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
@@ -46,8 +59,6 @@ Blockly.Blocks.mmshield_servo_read = {
     this.appendDummyInput()
         .appendField("Read pwm value from servo")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"]]), "channel");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");

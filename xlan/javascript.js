@@ -6,12 +6,19 @@ Blockly.Arduino.mmshield_init = function(block) {
   return code;
 };
 
-Blockly.Arduino.mmshield_move = function(block) {
+Blockly.Arduino.mmshield_rotate = function(block) {
   var dropdown_channel = block.getFieldValue('channel');
   var dropdown_dir = block.getFieldValue('dir');
-  var number_speed = block.getFieldValue('speed');
+  var number_pwm = block.getFieldValue('pwm');
 
-  var code = 'mm.RotateMotor(' + dropdown_channel + ', ' + dropdown_dir + ', ' + number_speed + ');\n';
+  var code = 'mm.RotateMotor(' + dropdown_channel + ', ' + dropdown_dir + ', ' + number_pwm + ');\n';
+  return code;
+};
+
+Blockly.Arduino.mmshield_stop = function(block) {
+  var dropdown_channel = block.getFieldValue('channel');
+
+  var code = 'mm.StopMotor(' + dropdown_channel + ');\n';
   return code;
 };
 
