@@ -1,4 +1,5 @@
 <category name="X-LAN積木" colour="#a5745b">
+  <category name="xlan">
     <block type="mmshield_init"></block>
     <block type="mmshield_servo_write">
       <field name="pwm">375</field>
@@ -19,6 +20,7 @@
     <block type="mmshield_oled_mirror"></block>
     <block type="mmshield_oled_init"></block>
     <block type="mmshield_oled_reset"></block>
+    <block type="mmshield_oled_clear"></block>
     <block type="mmshield_oled_show_msg">
       <field name="msg">Hello</field>
       <field name="x">0</field>
@@ -26,11 +28,9 @@
     </block>
     <block type="mmshield_oled_set_align">
       <field name="align">TEXT_ALIGN_LEFT</field>
-      <next>
-        <block type="mmshield_oled_set_fontsize">
-          <field name="fontsize">ArialMT_Plain_10</field>
-        </block>
-      </next>
     </block>
-    <block type="mmshield_oled_clear"></block>
+    <block type="mmshield_oled_set_fontsize">
+      <field name="fontsize">ArialMT_Plain_10</field>
+    </block>
+  </category>
 </category>
