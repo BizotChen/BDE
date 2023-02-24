@@ -185,3 +185,29 @@ Blockly.Blocks.mmshield_oled_display = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks.mmshield_oled_contrast = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set OLED contrast")
+        .appendField(new Blockly.FieldNumber(128, 0, 255), "contrast");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_brightness = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set OLED brightness")
+        .appendField(new Blockly.FieldNumber(128, 0, 255), "brightness");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

@@ -94,3 +94,17 @@ Blockly.Arduino.mmshield_oled_display = function(block) {
   var code = 'if (' + dropdown_switch + ' == 1)\ndisplay.displayOn();\nelse\ndisplay.displayOff();\n';
   return code;
 };
+
+Blockly.Arduino.mmshield_oled_contrast = function(block) {
+  var number_contrast = block.getFieldValue('contrast');
+
+  var code = 'display.setContrast(' + number_contrast + ');\n';
+  return code;
+};
+
+Blockly.Arduino.mmshield_oled_brightness = function(block) {
+  var number_brightness = block.getFieldValue('brightness');
+
+  var code = 'display.setBrightness(' + number_brightness + ');\n';
+  return code;
+};
