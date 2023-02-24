@@ -1,13 +1,6 @@
 <category name="X-LAN積木" colour="#a5745b">
-  <category name="xlan">
+  <category name="MMShield">
     <block type="mmshield_init"></block>
-    <block type="mmshield_servo_write">
-      <field name="pwm">375</field>
-      <field name="channel">1</field>
-    </block>
-    <block type="mmshield_servo_read">
-      <field name="channel">1</field>
-    </block>
     <block type="mmshield_motor_rotate">
       <field name="channel">1</field>
       <field name="dir">FORWARD</field>
@@ -16,14 +9,14 @@
     <block type="mmshield_motor_stop">
       <field name="channel">1</field>
     </block>
-    <block type="mmshield_oled_flip"></block>
-    <block type="mmshield_oled_mirror"></block>
-    <block type="mmshield_oled_init"></block>
-    <block type="mmshield_oled_reset"></block>
-    <block type="mmshield_oled_clear"></block>
-    <block type="mmshield_oled_display">
-      <field name="switch">1</field>
+    <block type="mmshield_servo_write">
+      <field name="pwm">375</field>
+      <field name="channel">1</field>
     </block>
+    <block type="mmshield_servo_read">
+      <field name="channel">1</field>
+    </block>
+    <block type="mmshield_oled_init"></block>
     <block type="mmshield_oled_show_msg">
       <field name="msg">Hello</field>
       <field name="x">0</field>
@@ -34,6 +27,13 @@
     </block>
     <block type="mmshield_oled_set_fontsize">
       <field name="fontsize">ArialMT_Plain_10</field>
+    </block>
+    <block type="mmshield_oled_flip"></block>
+    <block type="mmshield_oled_mirror"></block>
+    <block type="mmshield_oled_reset"></block>
+    <block type="mmshield_oled_clear"></block>
+    <block type="mmshield_oled_display">
+      <field name="switch">1</field>
     </block>
   </category>
 </category>

@@ -95,7 +95,7 @@ JavaScript
 Blockly.Blocks.mmshield_oled_reset = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Reset OLED display");
+        .appendField("Reset OLED orientation");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
