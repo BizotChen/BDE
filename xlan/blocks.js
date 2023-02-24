@@ -10,7 +10,7 @@ Blockly.Blocks.mmshield_init = {
   }
 };
 
-Blockly.Blocks.mmshield_rotate = {
+Blockly.Blocks.mmshield_motor_rotate = {
   init: function() {
     this.appendDummyInput()
         .appendField("Rotate motor")
@@ -26,7 +26,7 @@ Blockly.Blocks.mmshield_rotate = {
   }
 };
 
-Blockly.Blocks.mmshield_stop = {
+Blockly.Blocks.mmshield_motor_stop = {
   init: function() {
     this.appendDummyInput()
         .appendField("Stop motor")
@@ -59,6 +59,113 @@ Blockly.Blocks.mmshield_servo_read = {
     this.appendDummyInput()
         .appendField("Read pwm value from servo")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"]]), "channel");
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_flip = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Flip OLED display vertically");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_mirror = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mirror OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Block Definition: 
+JavaScript
+Blockly.Blocks.mmshield_oled_reset = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Reset OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_clear = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Clear OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_set_fontsize = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set font size")
+        .appendField(new Blockly.FieldDropdown([["10","ArialMT_Plain_10"], ["16","ArialMT_Plain_16"], ["24","ArialMT_Plain_24"]]), "size");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_show_msg = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Display string ")
+        .appendField(new Blockly.FieldTextInput("Hello"), "msg")
+        .appendField("at (")
+        .appendField(new Blockly.FieldNumber(0, 0, 127), "x")
+        .appendField(",")
+        .appendField(new Blockly.FieldNumber(0, 0, 63), "y")
+        .appendField(")");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_set_align = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set string to align ")
+        .appendField(new Blockly.FieldDropdown([["left","TEXT_ALIGN_LEFT"], ["center","TEXT_ALIGN_CENTER"], ["right","TEXT_ALIGN_RIGHT"]]), "align");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");
