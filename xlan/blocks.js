@@ -90,9 +90,6 @@ Blockly.Blocks.mmshield_oled_mirror = {
   }
 };
 
-
-Block Definition: 
-JavaScript
 Blockly.Blocks.mmshield_oled_reset = {
   init: function() {
     this.appendDummyInput()
@@ -133,7 +130,7 @@ Blockly.Blocks.mmshield_oled_set_fontsize = {
   init: function() {
     this.appendDummyInput()
         .appendField("Set font size")
-        .appendField(new Blockly.FieldDropdown([["10","ArialMT_Plain_10"], ["16","ArialMT_Plain_16"], ["24","ArialMT_Plain_24"]]), "size");
+        .appendField(new Blockly.FieldDropdown([["10","ArialMT_Plain_10"], ["16","ArialMT_Plain_16"], ["24","ArialMT_Plain_24"]]), "fontsize");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
