@@ -21,6 +21,9 @@
     <block type="mmshield_oled_init"></block>
     <block type="mmshield_oled_reset"></block>
     <block type="mmshield_oled_clear"></block>
+    <block type="mmshield_oled_display">
+      <field name="switch">1</field>
+    </block>
     <block type="mmshield_oled_show_msg">
       <field name="msg">Hello</field>
       <field name="x">0</field>

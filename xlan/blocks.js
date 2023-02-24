@@ -171,3 +171,17 @@ Blockly.Blocks.mmshield_oled_set_align = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks.mmshield_oled_display = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Turn")
+        .appendField(new Blockly.FieldDropdown([["on","1"], ["off","0"]]), "switch")
+        .appendField("OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

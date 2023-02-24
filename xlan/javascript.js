@@ -87,3 +87,10 @@ Blockly.Arduino.mmshield_oled_set_align = function(block) {
   var code = 'display.setTextAlignment(' + dropdown_align + ');\n';
   return code;
 };
+
+Blockly.Arduino.mmshield_oled_display = function(block) {
+  var dropdown_switch = block.getFieldValue('switch');
+
+  var code = 'if (' + dropdown_switch + ' == 1)\ndisplay.displayOn();\nelse\ndisplay.displayOff();\n';
+  return code;
+};
