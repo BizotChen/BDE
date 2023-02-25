@@ -33,7 +33,7 @@ Blockly.Arduino.mmshield_servo_write = function(block) {
 Blockly.Arduino.mmshield_servo_read = function(block) {
   var dropdown_channel = block.getFieldValue('channel');
 
-  var code = 'mm.ReadPWM(' + dropdown_channel + ');\n';
+  var code = 'mm.ReadPWM(' + dropdown_channel + ')';
   return code;
 };
 

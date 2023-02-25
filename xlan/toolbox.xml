@@ -35,5 +35,11 @@
     <block type="mmshield_oled_display">
       <field name="switch">1</field>
     </block>
+    <block type="mmshield_oled_brightness">
+      <field name="brightness">128</field>
+    </block>
+    <block type="mmshield_oled_contrast">
+      <field name="contrast">128</field>
+    </block>
   </category>
 </category>
