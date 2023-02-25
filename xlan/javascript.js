@@ -1,6 +1,6 @@
 Blockly.Arduino.mmshield_init = function(block) {
-  Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();\n';
-  Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();\n';
+  Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
+  Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';
 
   var code = '';
   return code;
@@ -58,8 +58,8 @@ Blockly.Arduino.mmshield_oled_clear = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_init = function(block) {
-  Blockly.Arduino.definitions_['mmshield_oled_init'] = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);\n';
-  Blockly.Arduino.setups_['mmshield_oled_init'] = 'display.init();\n';
+  Blockly.Arduino.definitions_['mmshield_oled_init'] = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
+  Blockly.Arduino.setups_['mmshield_oled_init'] = 'display.init();';
 
   var code = '';
   return code;
