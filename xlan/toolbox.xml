@@ -10,8 +10,6 @@
       <block type="mmshield_motor_stop">
         <field name="channel">1</field>
       </block>
-    </category>
-    <category name="Servo">
       <block type="mmshield_servo_write">
         <field name="pwm">375</field>
         <field name="channel">1</field>
