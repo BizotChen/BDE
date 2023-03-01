@@ -19,9 +19,6 @@
         <field name="pwm">375</field>
         <field name="channel">1</field>
       </block>
-      <block type="mmshield_servo_read">
-        <field name="channel">1</field>
-      </block>
     </category>
     <category name="OLED">
       <block type="mmshield_oled_init"></block>

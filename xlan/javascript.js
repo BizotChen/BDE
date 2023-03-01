@@ -52,13 +52,6 @@ Blockly.Arduino.mmshield_servo_write = function(block) {
   return code;
 };
 
-Blockly.Arduino.mmshield_servo_read = function(block) {
-  var dropdown_channel = block.getFieldValue('channel');
-
-  var code = 'mm.ReadPWM(' + dropdown_channel + ')';
-  return code;
-};
-
 Blockly.Arduino.mmshield_oled_flip = function(block) {
   var code = 'display.flipScreenVertically();\n';
   return code;

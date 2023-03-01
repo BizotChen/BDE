@@ -99,18 +99,6 @@ Blockly.Blocks.mmshield_servo_write = {
   }
 };
 
-Blockly.Blocks.mmshield_servo_read = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Read pwm value from servo")
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"]]), "channel");
-    this.setOutput(true, null);
-    this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks.mmshield_oled_flip = {
   init: function() {
     this.appendDummyInput()
