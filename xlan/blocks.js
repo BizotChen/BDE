@@ -1,8 +1,40 @@
-Blockly.Blocks.xlan_serial = {
+Blockly.Blocks.xlan_serial_init = {
   init: function() {
     this.appendDummyInput()
         .appendField("Initial Serial in baud")
         .appendField(new Blockly.FieldDropdown([["4800","4800"], ["9600","9600"], ["19200","19200"], ["38400","38400"], ["57600","57600"], ["115200","115200"]]), "baud");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_serial_print = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Print string");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput()
+        .appendField("to Serial");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_serial_println = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Print inline string");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput()
+        .appendField("to Serial");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);

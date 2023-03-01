@@ -1,6 +1,8 @@
 <category name="X-LAN積木" colour="#a5745b">
   <category name="Serial">
-    <block type="xlan_serial"></block>
+    <block type="xlan_serial_init"></block>
+    <block type="xlan_serial_print"></block>
+    <block type="xlan_serial_println"></block>
   </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>

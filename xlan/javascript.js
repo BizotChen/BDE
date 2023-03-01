@@ -1,9 +1,22 @@
-Blockly.Arduino.xlan_serial = function(block) {
+Blockly.Arduino.xlan_serial_init = function(block) {
   var dropdown_baud = block.getFieldValue('baud');
-
-  Blockly.Arduino.setups_['xlan_serial'] = 'Serial.begin(' + dropdown_baud + ');';
+  Blockly.Arduino.setups_['xlan_serial_init'] = 'Serial.begin(' + dropdown_baud + ');';
 
   var code = '';
+  return code;
+};
+
+Blockly.Arduino.xlan_serial_print = function(block) {
+  var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = 'Serial.print(String(' + value_text + '));';
+  return code;
+};
+
+Blockly.Arduino.xlan_serial_println = function(block) {
+  var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = 'Serial.println(String(' + value_text + '));';
   return code;
 };
 
