@@ -1,5 +1,7 @@
 <category name="X-LAN積木" colour="#a5745b">
-  <block type="xlan_serial"></block>
+  <category name="Serial">
+    <block type="xlan_serial"></block>
+  </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>
     <category name="Motor">
