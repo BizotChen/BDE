@@ -1,3 +1,12 @@
+Blockly.Arduino.xlan_serial = function(block) {
+  var dropdown_baud = block.getFieldValue('baud');
+
+  Blockly.Arduino.setups_['xlan_serial'] = 'Serial.begin(' + dropdown_baud + ');';
+
+  var code = '';
+  return code;
+};
+
 Blockly.Arduino.mmshield_init = function(block) {
   Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
   Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';

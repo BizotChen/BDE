@@ -1,3 +1,16 @@
+Blockly.Blocks.xlan_serial = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial Serial in baud")
+        .appendField(new Blockly.FieldDropdown([["4800","4800"], ["9600","9600"], ["19200","19200"], ["38400","38400"], ["57600","57600"], ["115200","115200"]]), "baud");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks.mmshield_init = {
   init: function() {
     this.appendDummyInput()
