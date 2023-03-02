@@ -3,6 +3,7 @@
     <block type="xlan_serial_init"></block>
     <block type="xlan_serial_print"></block>
     <block type="xlan_serial_println"></block>
+    <block type="xlan_serial_while_loop"></block>
   </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>

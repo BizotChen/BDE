@@ -43,6 +43,18 @@ Blockly.Blocks.xlan_serial_println = {
   }
 };
 
+Blockly.Blocks.xlan_serial_while_loop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read values from Serial");
+    this.appendStatementInput("STATEMENT")
+        .setCheck(null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks.mmshield_init = {
   init: function() {
     this.appendDummyInput()
@@ -175,7 +187,7 @@ Blockly.Blocks.mmshield_oled_set_fontsize = {
 Blockly.Blocks.mmshield_oled_show_msg = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Display a string ");
+        .appendField("Display a string");
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
