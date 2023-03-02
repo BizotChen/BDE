@@ -49,6 +49,8 @@ Blockly.Blocks.xlan_serial_while_loop = {
         .appendField("Read values from Serial");
     this.appendStatementInput("STATEMENT")
         .setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
