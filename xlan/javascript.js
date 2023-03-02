@@ -9,14 +9,14 @@ Blockly.Arduino.xlan_serial_init = function(block) {
 Blockly.Arduino.xlan_serial_print = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
 
-  var code = 'Serial.print(String(' + value_text + '));';
+  var code = 'Serial.print(String(' + value_text + '));\n';
   return code;
 };
 
 Blockly.Arduino.xlan_serial_println = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
 
-  var code = 'Serial.println(String(' + value_text + '));';
+  var code = 'Serial.println(String(' + value_text + '));\n';
   return code;
 };
 
@@ -88,11 +88,11 @@ Blockly.Arduino.mmshield_oled_set_fontsize = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_show_msg = function(block) {
-  var text_msg = block.getFieldValue('msg');
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
   var number_x = block.getFieldValue('x');
   var number_y = block.getFieldValue('y');
 
-  var code = 'display.drawString(' + number_x + ', ' + number_y + ', \"' + text_msg + '\");\ndisplay.display();\n';
+  var code = 'display.drawString(' + number_x + ', ' + number_y + ', \"' + value_text + '\");\ndisplay.display();\n';
   return code;
 };
 

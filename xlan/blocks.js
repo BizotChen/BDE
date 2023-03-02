@@ -175,8 +175,10 @@ Blockly.Blocks.mmshield_oled_set_fontsize = {
 Blockly.Blocks.mmshield_oled_show_msg = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Display string ")
-        .appendField(new Blockly.FieldTextInput("Hello"), "msg")
+        .appendField("Display a string ");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput()
         .appendField("at (")
         .appendField(new Blockly.FieldNumber(0, 0, 127), "x")
         .appendField(",")

@@ -30,7 +30,6 @@
         <field name="fontsize">ArialMT_Plain_10</field>
       </block>
       <block type="mmshield_oled_show_msg">
-        <field name="msg">Hello</field>
         <field name="x">0</field>
         <field name="y">0</field>
       </block>
