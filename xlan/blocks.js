@@ -46,7 +46,7 @@ Blockly.Blocks.xlan_serial_println = {
 Blockly.Blocks.xlan_serial_while_loop = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Read values from Serial");
+        .appendField("Read data from Serial");
     this.appendStatementInput("STATEMENT")
         .setCheck(null);
     this.setPreviousStatement(true, null);
@@ -73,7 +73,7 @@ Blockly.Blocks.xlan_serial_read_a_char = {
 Blockly.Blocks.xlan_serial_read_an_inline_string = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Read an inline string from Serial")
+        .appendField("Read an inline string to the variable")
         .appendField(new Blockly.FieldVariable("strBuffer"), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
