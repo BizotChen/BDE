@@ -5,7 +5,10 @@
     <block type="xlan_serial_println"></block>
     <block type="xlan_serial_while_loop"></block>
     <block type="xlan_serial_read_a_char">
-      <field name="name" id="O_15oKY2H{@~QP*v]mz$">item</field>
+      <field name="NAME" id="O_15oKY2H{@~QP*v]mz$">chrBuffer</field>
+    </block>
+    <block type="xlan_serial_read_an_inline_string">
+      <field name="NAME" id="Lv|?p|q-ULreM$wnVN2~">strBuffer</field>
     </block>
   </category>
   <category name="MMShield">
