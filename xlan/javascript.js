@@ -7,14 +7,14 @@ Blockly.Arduino.xlan_serial_init = function(block) {
 };
 
 Blockly.Arduino.xlan_serial_print = function(block) {
-  var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
 
   var code = 'Serial.print(String(' + value_text + '));';
   return code;
 };
 
 Blockly.Arduino.xlan_serial_println = function(block) {
-  var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
 
   var code = 'Serial.println(String(' + value_text + '));';
   return code;

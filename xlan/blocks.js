@@ -14,7 +14,7 @@ Blockly.Blocks.xlan_serial_init = {
 Blockly.Blocks.xlan_serial_print = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Print string");
+        .appendField("Print a string");
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
@@ -30,7 +30,7 @@ Blockly.Blocks.xlan_serial_print = {
 Blockly.Blocks.xlan_serial_println = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Print inline string");
+        .appendField("Print an inline string");
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
