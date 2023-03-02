@@ -27,6 +27,13 @@ Blockly.Arduino.xlan_serial_while_loop = function(block) {
   return code;
 };
 
+Blockly.Arduino.xlan_serial_read_a_char = function(block) {
+  var variable_name = Blockly.Arduino.nameDB_.getName(block.getFieldValue('name'), Blockly.Variables.NAME_TYPE);
+
+  var code = variable_name + ' = Serial.read();\n';
+  return code;
+};
+
 Blockly.Arduino.mmshield_init = function(block) {
   Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
   Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';

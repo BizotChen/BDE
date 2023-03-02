@@ -4,6 +4,9 @@
     <block type="xlan_serial_print"></block>
     <block type="xlan_serial_println"></block>
     <block type="xlan_serial_while_loop"></block>
+    <block type="xlan_serial_read_a_char">
+      <field name="name" id="O_15oKY2H{@~QP*v]mz$">item</field>
+    </block>
   </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>
