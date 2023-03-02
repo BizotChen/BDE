@@ -92,7 +92,7 @@ Blockly.Arduino.mmshield_oled_show_msg = function(block) {
   var number_x = block.getFieldValue('x');
   var number_y = block.getFieldValue('y');
 
-  var code = 'display.drawString(' + number_x + ', ' + number_y + ', \"' + value_text + '\");\ndisplay.display();\n';
+  var code = 'display.drawString(' + number_x + ', ' + number_y + ', String(' + value_text + '));\ndisplay.display();\n';
   return code;
 };
 
