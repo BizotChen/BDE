@@ -288,7 +288,7 @@ Blockly.Blocks.mmshield_oled_contrast = {
 Blockly.Blocks.i2s_media_output_device_init = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Init I2S media output device in LRC pin")
+        .appendField("Init I2S media output device via LRC pin")
         .appendField(new Blockly.FieldTextInput("16"), "lrc")
         .appendField(", BCLK pin")
         .appendField(new Blockly.FieldTextInput("12"), "bclk")
@@ -298,6 +298,35 @@ Blockly.Blocks.i2s_media_output_device_init = {
     this.setNextStatement(true, null);
     this.setColour(45);
  this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.i2s_media_play_web_radio = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Play");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput()
+        .appendField("via I2S media device");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.web_radio_url = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("web radio URL")
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.WEB_RADIO_URL), "WEB_RADIO_URL");
+   this.setInputsInline(true);
+   this.setColour(45);
+   this.setOutput(true, "String");
+ this.setTooltip("")
  this.setHelpUrl("");
   }
 };

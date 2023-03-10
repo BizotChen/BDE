@@ -61,6 +61,12 @@
         <field name="bclk">12</field>
         <field name="din">13</field>
       </block>
+      <block type="i2s_media_play_web_radio">
+        <value name="TEXT">
+          <block type="web_radio_url"/>
+        </value>
+      </block>
+      <block type="web_radio_url"></block>
     </category>
   </category>
 </category>
