@@ -321,7 +321,7 @@ Blockly.Blocks.i2s_media_play_web_radio = {
 Blockly.Blocks.web_radio_url = {
   init: function() {
     this.appendDummyInput()
-        .appendField("web radio URL")
+        .appendField("web radio")
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.WEB_RADIO_URL), "WEB_RADIO_URL");
    this.setInputsInline(true);
    this.setColour(45);
