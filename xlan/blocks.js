@@ -284,3 +284,20 @@ Blockly.Blocks.mmshield_oled_contrast = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks.i2s_media_output_device_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Init I2S media output device in LRC pin")
+        .appendField(new Blockly.FieldTextInput("16"), "lrc")
+        .appendField(", BCLK pin")
+        .appendField(new Blockly.FieldTextInput("12"), "bclk")
+        .appendField(", DIN pin")
+        .appendField(new Blockly.FieldTextInput("13"), "din");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

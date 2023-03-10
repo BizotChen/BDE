@@ -54,4 +54,13 @@
       </block>
     </category>
   </category>
+  <category name="I2S Media">
+    <category name="Output">
+      <block type="i2s_media_output_device_init">
+        <field name="lrc">16</field>
+        <field name="bclk">12</field>
+        <field name="din">13</field>
+      </block>
+    </category>
+  </category>
 </category>
