@@ -193,5 +193,5 @@ Blockly.Arduino.i2s_media_google_tts = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, "TEXT", Blockly.Arduino.ORDER_ATOMIC||"");
   var dropdown_lang = block.getFieldValue('lang');
 
-  return 'getVoiceFromGoogle(' + value_text + ', ' + dropdown_lang + ');\n';
+  return 'getVoiceFromGoogle(' + value_text + ', \"' + dropdown_lang + '");\n';
 }
