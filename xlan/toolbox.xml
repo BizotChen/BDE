@@ -66,8 +66,8 @@
           <block type="i2s_media_web_radio_url"></block>
         </value>
       </block>
-      <block type="i2s_media_loop"></block>
       <block type="i2s_media_web_radio_url"></block>
+      <block type="i2s_media_loop"></block>
       <block type="i2s_media_google_tts">
         <field name="lang">zh-TW</field>
       </block>
