@@ -7,14 +7,14 @@ Blockly.Arduino.xlan_serial_init = function(block) {
 };
 
 Blockly.Arduino.xlan_serial_print = function(block) {
-  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   var code = 'Serial.print(String(' + value_text + '));\n';
 
   return code;
 };
 
 Blockly.Arduino.xlan_serial_println = function(block) {
-  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   var code = 'Serial.println(String(' + value_text + '));\n';
 
   return code;
@@ -113,7 +113,7 @@ Blockly.Arduino.mmshield_oled_set_fontsize = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_show_msg = function(block) {
-  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   var number_x = block.getFieldValue('x');
   var number_y = block.getFieldValue('y');
   var code = 'display.drawString(' + number_x + ', ' + number_y + ', String(' + value_text + '));\ndisplay.display();\n';
@@ -173,13 +173,13 @@ Blockly.Arduino.i2s_media_output_device_init = function(block) {
 }
 
 Blockly.Arduino.i2s_media_play_web_radio = function(block) {
-  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC);
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   var code = 'playWebRadio(' + value_text + ');\n';
 
   return code;
 }
 
-Blockly.Arduino.web_radio_url = function(block) {
+Blockly.Arduino.i2s_media_web_radio_url = function(block) {
   var value_text = '\"' + block.getFieldValue("WEB_RADIO_URL") + '\"';
 
   return [value_text, Blockly.Arduino.ORDER_ATOMIC]
@@ -187,4 +187,11 @@ Blockly.Arduino.web_radio_url = function(block) {
 
 Blockly.Arduino.i2s_media_loop = function(block) {
   return 'i2sMediaLoop();\n';
+}
+
+Blockly.Arduino.i2s_media_google_tts = function(block) {
+  var value_text = Blockly.Arduino.valueToCode(block, "TEXT", Blockly.Arduino.ORDER_ATOMIC||""),
+  var dropdown_lang = block.getFieldValue('lang');
+
+  return 'getVoiceFromGoogle(' + value_text + ',' + dropdown_lang + ');\n';
 }

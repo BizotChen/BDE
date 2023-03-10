@@ -318,7 +318,7 @@ Blockly.Blocks.i2s_media_play_web_radio = {
   }
 };
 
-Blockly.Blocks.web_radio_url = {
+Blockly.Blocks.i2s_media_web_radio_url = {
   init: function() {
     this.appendDummyInput()
         .appendField("web radio")
@@ -334,6 +334,23 @@ Blockly.Blocks.i2s_media_loop = {
   init: function() {
     this.appendDummyInput()
         .appendField("I2S media loop");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.i2s_media_google_tts = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Speech");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput()
+        .appendField("via Google TTS service in language")
+        .appendField(new Blockly.FieldDropdown([["Taiwan","zh-TW"],["US","en-US"],["UK","en-GB"],["Japan","ja-JP"],["Korea","ko-KR"],["Frence","fr-FR"],["German","de-DE"],["Thailand","th-TH"],["Vietnum","vi-VN"]]), "lang");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(45);
