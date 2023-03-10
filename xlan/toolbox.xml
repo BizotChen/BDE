@@ -55,6 +55,13 @@
     </category>
   </category>
   <category name="I2S Media">
+    <category name="Input">
+      <block type="i2s_media_input_device_init">
+        <field name="sck">2</field>
+        <field name="ws">15</field>
+        <field name="sd">14</field>
+      </block>
+    </category>
     <category name="Output">
       <block type="i2s_media_output_device_init">
         <field name="lrc">16</field>

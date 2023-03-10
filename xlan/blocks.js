@@ -83,6 +83,7 @@ Blockly.Blocks.xlan_serial_read_an_inline_string = {
   }
 };
 
+//MMShield32
 Blockly.Blocks.mmshield_init = {
   init: function() {
     this.appendDummyInput()
@@ -285,6 +286,25 @@ Blockly.Blocks.mmshield_oled_contrast = {
   }
 };
 
+//I2S Media Input
+Blockly.Blocks.i2s_media_input_device_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Init I2S media input device in SCK pin")
+        .appendField(new Blockly.FieldTextInput("2"), "sck")
+        .appendField(", WS pin")
+        .appendField(new Blockly.FieldTextInput("15"), "ws")
+        .appendField(", SD pin")
+        .appendField(new Blockly.FieldTextInput("14"), "sd");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//I2S Media Output
 Blockly.Blocks.i2s_media_output_device_init = {
   init: function() {
     this.appendDummyInput()
