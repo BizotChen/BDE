@@ -349,7 +349,7 @@ Blockly.Blocks.i2s_media_google_tts = {
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
-        .appendField("via Google TTS service in language")
+        .appendField("via Google TTS in language")
         .appendField(new Blockly.FieldDropdown([["TW","zh-TW"], ["US","en-US"], ["UK","en-GB"], ["Japan","ja-JP"], ["Korea","ko-KR"], ["Frence","fr-FR"], ["German","de-DE"], ["Thailand","th-TH"], ["Vietnum","vi-VN"]]), "lang");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
