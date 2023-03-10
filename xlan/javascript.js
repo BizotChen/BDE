@@ -186,5 +186,5 @@ Blockly.Arduino.i2s_media_play_web_radio = function(block) {
 Blockly.Arduino.web_radio_url = function(block) {
   var value_text = '\"' + block.getFieldValue("WEB_RADIO_URL") + '\"';
 
-  return[value_text, Blockly.Arduino.ORDER_ATOMIC]
+  return [value_text, Blockly.Arduino.ORDER_ATOMIC];
 }
