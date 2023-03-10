@@ -149,7 +149,7 @@ Blockly.Arduino.mmshield_oled_contrast = function(block) {
   return code;
 };
 
-Blockly.Arduino.i2s_media_output_device_init = function() {
+Blockly.Arduino.i2s_media_output_device_init = function(block) {
   var number_bclk = block.getFieldValue('bclk');
   var number_lrc = block.getFieldValue('lrc');
   var number_din = block.getFieldValue('din');
