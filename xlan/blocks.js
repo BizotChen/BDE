@@ -323,10 +323,21 @@ Blockly.Blocks.web_radio_url = {
     this.appendDummyInput()
         .appendField("web radio")
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.WEB_RADIO_URL), "WEB_RADIO_URL");
-   this.setInputsInline(true);
-   this.setColour(45);
-   this.setOutput(true, "String");
- this.setTooltip("")
+    this.setOutput(true, "String");
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.i2s_media_play_loop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Keep playing");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
  this.setHelpUrl("");
   }
 };
