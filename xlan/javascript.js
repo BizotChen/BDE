@@ -175,6 +175,16 @@ Blockly.Arduino.i2s_media_input_device_stop = function(block) {
   return code;
 }
 
+Blockly.Arduino.i2s_media_azure_stt = function(block) {
+  var dropdown_punctuation = block.getFieldValue('punctuation');
+  var number_time = block.getFieldValue('time');
+  var value_key = Blockly.JavaScript.valueToCode(block, 'KEY', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_lang = block.getFieldValue('lang');
+
+
+
+}
+
 //I2S Media Output
 Blockly.Arduino.i2s_media_output_device_init = function(block) {
   var number_bclk = block.getFieldValue('bclk');

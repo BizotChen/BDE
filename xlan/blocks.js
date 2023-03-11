@@ -328,6 +328,26 @@ Blockly.Blocks.i2s_media_input_device_stop = {
   }
 };
 
+Blockly.Blocks.i2s_media_azure_stt = {
+  init: function() {
+    this.appendValueInput("KEY")
+        .setCheck("String")
+        .appendField("Recognize voice to text")
+        .appendField(new Blockly.FieldDropdown([["without","WITHOUT"], ["with","WITH"]]), "punctuation")
+        .appendField("punctuation in")
+        .appendField(new Blockly.FieldNumber(5, 3, 10), "time")
+        .appendField("sec(s) via Azure STT with Key");
+    this.appendDummyInput()
+        .appendField("in language")
+        .appendField(new Blockly.FieldDropdown([["TW","zh-TW"], ["US","en-US"], ["UK","en-GB"], ["Japan","ja-JP"], ["Korea","ko-KR"], ["Frence","fr-FR"], ["German","de-DE"], ["Thailand","th-TH"], ["Vietnum","vi-VN"]]), "lang");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 //I2S Media Output
 Blockly.Blocks.i2s_media_output_device_init = {
   init: function() {
