@@ -304,6 +304,30 @@ Blockly.Blocks.i2s_media_input_device_init = {
   }
 };
 
+Blockly.Blocks.i2s_media_input_device_start = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Start I2S media input device");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.i2s_media_input_device_stop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Stop I2S media input device");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 //I2S Media Output
 Blockly.Blocks.i2s_media_output_device_init = {
   init: function() {
