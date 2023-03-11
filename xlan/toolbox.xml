@@ -64,7 +64,7 @@
       <block type="i2s_media_input_device_start"></block>
       <block type="i2s_media_input_device_stop"></block>
       <block type="i2s_media_azure_stt">
-        <field name="punctuation">WITHOUT</field>
+        <field name="punctuation">false</field>
         <field name="time">5</field>
         <field name="lang">zh-TW</field>
       </block>

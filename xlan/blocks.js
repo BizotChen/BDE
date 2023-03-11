@@ -333,7 +333,7 @@ Blockly.Blocks.i2s_media_azure_stt = {
     this.appendValueInput("KEY")
         .setCheck("String")
         .appendField("Recognize voice to text")
-        .appendField(new Blockly.FieldDropdown([["without","WITHOUT"], ["with","WITH"]]), "punctuation")
+        .appendField(new Blockly.FieldDropdown([["without","false"], ["with","true"]]), "punctuation")
         .appendField("punctuation in")
         .appendField(new Blockly.FieldNumber(5, 3, 10), "time")
         .appendField("sec(s) via Azure STT with Key");
