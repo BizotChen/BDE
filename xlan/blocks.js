@@ -369,7 +369,7 @@ Blockly.Blocks.i2s_media_output_device_init = {
 Blockly.Blocks.i2s_media_play_web_radio = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Play");
+        .appendField("Listen to");
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
@@ -385,7 +385,7 @@ Blockly.Blocks.i2s_media_play_web_radio = {
 Blockly.Blocks.i2s_media_web_radio_url = {
   init: function() {
     this.appendDummyInput()
-        .appendField("web radio")
+        .appendField("the web radio")
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.WEB_RADIO_URL), "WEB_RADIO_URL");
     this.setOutput(true, "String");
     this.setColour(45);
@@ -409,7 +409,7 @@ Blockly.Blocks.i2s_media_loop = {
 Blockly.Blocks.i2s_media_google_tts = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Speech");
+        .appendField("Say");
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()

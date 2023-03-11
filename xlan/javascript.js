@@ -180,9 +180,9 @@ Blockly.Arduino.i2s_media_azure_stt = function(block) {
   var number_time = block.getFieldValue('time');
   var value_key = Blockly.JavaScript.valueToCode(block, 'KEY', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_lang = block.getFieldValue('lang');
+  var code = '';
 
-
-
+  return code;
 }
 
 //I2S Media Output
