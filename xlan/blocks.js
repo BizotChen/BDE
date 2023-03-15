@@ -354,7 +354,7 @@ Blockly.Blocks.i2s_media_azure_stt_result = {
         .appendField("");
     this.setOutput(true, "String");
     this.setColour(45);
- this.setTooltip("")
+ this.setTooltip("");
  this.setHelpUrl("");
   }
 };
