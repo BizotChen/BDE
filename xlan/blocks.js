@@ -351,7 +351,7 @@ Blockly.Blocks.i2s_media_azure_stt = {
 Blockly.Blocks.i2s_media_azure_stt_result = {
   init: function() {
     this.appendDummyInput()
-        .appendField("");
+        .appendField("Recognition result");
     this.setOutput(true, "String");
     this.setColour(45);
  this.setTooltip("");

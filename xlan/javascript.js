@@ -195,7 +195,7 @@ Blockly.Arduino.i2s_media_azure_stt = function(block) {
   }
 }
 
-Blockly.Arduino.i2sMic_STT_result = function(block) {
+Blockly.Arduino.i2s_media_azure_stt_result = function(block) {
   if (Blockly.Arduino.my_board_type=="ESP32") {
     return ['myRecgText', Blockly.Arduino.ORDER_ATOMIC];
   } else {
