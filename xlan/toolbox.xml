@@ -68,6 +68,7 @@
         <field name="time">5</field>
         <field name="lang">zh-TW</field>
       </block>
+      <block type="i2s_media_azure_stt_result"></block>
     </category>
     <category name="Output">
       <block type="i2s_media_output_device_init">
