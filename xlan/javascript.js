@@ -178,7 +178,7 @@ Blockly.Arduino.i2s_media_input_device_stop = function(block) {
 Blockly.Arduino.i2s_media_azure_stt = function(block) {
   var dropdown_punctuation = block.getFieldValue('punctuation');
   var number_time = block.getFieldValue('time');
-  var value_key = Blockly.Arduino.valueToCode(block, 'KEY', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_key = Blockly.Arduino.valueToCode(block, 'KEY', Blockly.Arduino.ORDER_ATOMIC);
   var dropdown_lang = block.getFieldValue('lang');
 
   if (Blockly.Arduino.my_board_type=="ESP32") {
