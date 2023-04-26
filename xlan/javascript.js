@@ -92,7 +92,7 @@ Blockly.Arduino.mmshield_oled_reset = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_clear = function(block) {
-  var code = 'display.clear();\n';
+  var code = 'display.clear();\ndisplay.display();\n';
 
   return code;
 };
