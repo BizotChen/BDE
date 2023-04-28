@@ -255,13 +255,13 @@ Blockly.Arduino.otto9_configuration = function(block) {
   var PIN_RR = block.getFieldValue('PIN_RR');
   var PIN_Buzzer = block.getFieldValue('PIN_Buzzer');
 
-  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\nOtto Otto;';
+  Blockly.Arduino.definitions_['otto_lib'] = '#include <Otto.h>\nOtto Otto;';
 
-  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL
-    + '#define RightLeg '+ PIN_YR +
-    + '#define LeftFoot '+ PIN_RL +
-    + '#define RightFoot '+ PIN_RR +
-    + '#define Buzzer '+ PIN_Buzzer;
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg ' + PIN_YL
+    + '#define RightLeg ' + PIN_YR
+    + '#define LeftFoot ' + PIN_RL
+    + '#define RightFoot ' + PIN_RR
+    + '#define Buzzer ' + PIN_Buzzer;
 
   Blockly.Arduino.setups_['otto_init'] = 'Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n';
   var code = '';
