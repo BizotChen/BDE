@@ -433,3 +433,88 @@ Blockly.Blocks.i2s_media_google_tts = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks.otto9_configuration = {init: function() {
+	var card=window.localStorage.card;
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Blocks.otto_i2cConfig = {init: function() {
+  var card=window.localStorage.card;
+    this.appendDummyInput()
+    .appendField("SDA")
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SDA");
+    this.appendDummyInput()
+    .appendField("SCL")
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SCL");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Blocks.otto_arms_init = {init: function() {
+    var card=window.localStorage.card;
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Blocks.otto_arms = { init: function() {
+    this.appendDummyInput().appendField(Blockly.Msg.CAT_OTTO_ARMS).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.OTTO9_ARMS_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+  }
+};
+
+Blockly.Blocks.otto_arms_home = {init: function() {
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Blocks.otto9_smooth = {init: function() {
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+  }
+};
+

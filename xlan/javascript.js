@@ -248,3 +248,242 @@ Blockly.Arduino.i2s_media_google_tts = function(block) {
   return 'textToSpeech(' + value_text + ', \"' + dropdown_lang + '");\n';
 }
 
+Blockly.Arduino.otto9_configuration = function(block) {
+  var PIN_YL= block.getFieldValue('PIN_YL');
+  var PIN_YR= block.getFieldValue('PIN_YR');
+  var PIN_RL= block.getFieldValue('PIN_RL');
+  var PIN_RR= block.getFieldValue('PIN_RR');
+  var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
+
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
+	+ 'Otto Otto;';
+
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
+ 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
+	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
+    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
+    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
+
+  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.otto_i2cConfig = function(block) {
+  var PIN_SDA= block.getFieldValue('PIN_SDA');
+  var PIN_SCL= block.getFieldValue('PIN_SCL');
+	
+  Blockly.Arduino.includes_['otto_i2cConfig_lib'] = '#include <Wire.h>\n';
+
+  Blockly.Arduino.definitions_['otto_i2cConfig_def'] = '#define PIN_SDA '+ PIN_SDA +'\n'
+	+ '#define PIN_SCL '+ PIN_SCL +'\n';
+	
+  Blockly.Arduino.setups_['otto_i2cConfig_begin']='Wire.begin(PIN_SDA, PIN_SCL);';
+  
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.otto_arms_init = function(block) {
+  var PIN_AL= block.getFieldValue('PIN_AL');
+  var PIN_AR= block.getFieldValue('PIN_AR');
+
+    Blockly.Arduino.includes_['otto_arms'] = '#include <Servo.h>\n'
+    + 'Servo AL, AR;';
+    Blockly.Arduino.variables_['otto_arms'] = 'int adj[]={ 0, 0,};\n'
+    +'int pos[]={ 90,90}; \n'
+    +'int shift = 60; \n'
+    +'int shift_inc = 10;  \n'
+    +'int shift_delay = 50;  \n';
+
+    Blockly.Arduino.definitions_['otto_arms'] = '#define PIN_AL '+ PIN_AL +' // left arm\n'
+    +'#define PIN_AR '+ PIN_AR +' // right arm \n'
+    +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
+
+    Blockly.Arduino.setups_['otto_arms']='AL.attach(PIN_AR);\n'
+    +'AR.attach(PIN_AL);\n'
+    +'move_servo();\n'
+    +'delay(100);';
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.otto_arms = function(block) {
+  var dropdown_otto_arms_choice = block.getFieldValue('otto_arms_choice');
+  var code = '';
+  switch(dropdown_otto_arms_choice) {
+	case 'HANDSUP':
+    code += 'AL.write(160);\n'
+    +'AR.write(20);\n'
+    +'delay(shift_delay);';
+    break;
+  case 'HANDSDOWN':
+    code += 'AL.write(20);\n'
+    +'AR.write(160);\n'
+    +'delay(shift_delay);';
+		break;
+	case 'HANDWAVE1':
+		code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[1] = angle;    move_servo();  delay(shift_delay);}\n'
+    +'for(int angle=90+shift; angle>90-shift; angle-=shift_inc) { pos[1] = angle;  move_servo(); delay(shift_delay); }\n'
+    +'for(int angle=90-shift; angle<90; angle+=shift_inc) {pos[1] = angle;  move_servo();   delay(shift_delay); }\n';
+		break;
+	case 'HANDWAVE2':
+		code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[2] = angle;    move_servo();  delay(shift_delay);}\n'
+     +'for(int angle=90+shift; angle>90-shift; angle-=shift_inc) { pos[2] = angle;  move_servo(); delay(shift_delay); }\n'
+     +'for(int angle=90-shift; angle<90; angle+=shift_inc) {pos[2] = angle;  move_servo();   delay(shift_delay); }\n';
+		break;
+  }
+  return code;
+};
+
+Blockly.Arduino.otto_arms_home = function(block) {
+var code = 'AL.write(90);\n'
++'AR.write(90);\n'
++'delay(shift_delay);';
+return code;
+};
+
+Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
+  + '#define LeftLeg 2 \n'
+	+ '#define RightLeg 3 \n'
+	+ '#define LeftFoot 4 \n'
+  + '#define RightFoot 5 \n'
+  +'#define Buzzer  13 \n'
+ +'#define DIN_PIN    A3 \n'
+  +'#define CS_PIN     A2 \n'
+  +'#define CLK_PIN    A1 \n'
+  +'#define LED_DIRECTION  1 \n'
+  +'#define PIN_Button   A0 \n'
+  +'#define PIN_ASSEMBLY    7\n'
+  ;
+  Blockly.Arduino.setups_['otto9_init']='Serial.begin(9600);\n'
+  +'BTserial.begin(9600);\n'
+ +'Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
+  +'Otto.initMATRIX(DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);\n'
+  +'Otto.matrixIntensity(1);\n'
+  +'pinMode(PIN_ASSEMBLY, INPUT_PULLUP);\n'
+  +'pinMode(PIN_Button, INPUT);\n'
+  +'SCmd.addCommand("S", receiveStop);    \n'
+  +'SCmd.addCommand("L", receiveLED);     \n'
+  +'SCmd.addCommand("T", recieveBuzzer);    \n'
+  +'SCmd.addCommand("M", receiveMovement);   \n'
+  +'SCmd.addCommand("H", receiveGesture);    \n'
+  +'SCmd.addCommand("K", receiveSing);       \n'
+  +'SCmd.addCommand("C", receiveTrims);      \n'
+  +'SCmd.addCommand("G", receiveServo);      \n'
+  +'SCmd.addCommand("R", receiveName);       \n'
+  +'SCmd.addCommand("E", requestName);\n'
+  +'SCmd.addCommand("I", requestProgramId);\n'
+  +'SCmd.addDefaultHandler(receiveStop);\n'
+  +'Otto.sing(S_connection);\n'
+  +'Otto.home();\n'
+
+  +'for (int i = 0; i < 2; i++) {\n'
+  +'for (int i = 0; i < 8; i++) {\n'
+      +'Otto.putAnimationMouth(littleUuh, i);\n'
+      +'delay(150);\n'
+    +'}\n'
+  +'}\n'
+  +'//Smile for a happy Otto :)\n'
+  +'Otto.putMouth(smile);\n'
+  +'Otto.sing(S_happy);\n'
+  +'delay(200);\n'
+  +'if (EEPROM.read(5) == name_fir) {\n'
+    +'Otto.jump(1, 700);\n'
+    +'delay(200);\n'
+    +'Otto.shakeLeg(1, T, 1);\n'
+    +'Otto.putMouth(smallSurprise);\n'
+    +'Otto.swing(2, 800, 20);\n'
+    +'Otto.home();\n'
+  +'}\n'
+  +'Otto.putMouth(happyOpen);\n'
+  +'previousMillis = millis();\n'
+ +'while (digitalRead(PIN_ASSEMBLY) == LOW) {\n'
+    +'Otto.home();\n'
+    +'Otto.sing(S_happy_short);   // sing every 5 seconds so we know OTTO is still working\n'
+    +'delay(5000);}\n'
+  
+  var code = 'SCmd.readSerial();     if (Otto.getRestState()==false){ move(moveId); }  \n'
+  return code;
+};
+
+Blockly.Arduino.otto9_smooth = function(block) {
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Servo.h>\n'
+  + '#include <Oscillator.h>\n'
+  + '#include <EEPROM.h>\n'
+  + '#define N_SERVOS 4';
+  Blockly.Arduino.variables_['otto9_var'] = 'void goingUp(int tempo);\n'
+  + 'void drunk (int tempo);\n'
+  + 'void noGravity(int tempo);\n'
+  + 'void kickLeft(int tempo);\n'
+  + 'void kickRight(int tempo);\n'
+  + 'void run(int steps, int T=500);\n'
+  + 'void walk(int steps, int T=1000);\n'
+  + 'void backyard(int steps, int T=3000);\n'
+  + 'void backyardSlow(int steps, int T=5000);\n'
+  + 'void turnLeft(int steps, int T=3000);\n'
+  + 'void turnRight(int steps, int T=3000);\n'
+  + 'void moonWalkLeft(int steps, int T=1000);\n'
+  + 'void moonWalkRight(int steps, int T=1000);\n'
+  + 'void crusaito(int steps, int T=1000);\n'
+  + 'void swing(int steps, int T=1000);\n'
+  + 'void upDown(int steps, int T=1000);\n'
+  + 'void flapping(int steps, int T=1000);\n'
+  + 'int t=495; // TEMPO: 121 BPM\n'
+  + 'double pause=0;';
+  Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
+  + '#define PIN_YL 2 // left leg, servo[0]\n'
+	+ '#define PIN_YR 3 // right leg, servo[1]\n'
+	+ '#define PIN_RL 4 // left foot, servo[2]\n'
+  + '#define PIN_RR 5 // right foot, servo[3]\n'
+  + '#define INTERVALTIME 10.0\n' 
+  + 'Oscillator servo[N_SERVOS];';
+  Blockly.Arduino.setups_['otto9_init']='  servo[0].attach(PIN_RR);\n'
+  + 'servo[1].attach(PIN_RL);\n'
+  + 'servo[2].attach(PIN_YR);\n'
+  + 'servo[3].attach(PIN_YL);\n'
+  + 'for(int i=0;i<4;i++) servo[i].SetPosition(90);\n'
+  var code = 'dance();}\n'
+  + 'void dance(){ primera_parte(); segunda_parte(); moonWalkLeft(4,t*2); moonWalkRight(4,t*2); moonWalkLeft(4,t*2); moonWalkRight(4,t*2); primera_parte();  crusaito(1,t*8); crusaito(1,t*7);\n'
+  + 'for (int i=0; i<16; i++){   flapping(1,t/4);   delay(3*t/4); }  moonWalkRight(4,t*2); moonWalkLeft(4,t*2);  moonWalkRight(4,t*2);  moonWalkLeft(4,t*2);  drunk(t*4);drunk(t*4);  drunk(t*4);  drunk(t*4);\n'
+  + 'kickLeft(t);  kickRight(t);  drunk(t*8);  drunk(t*4);drunk(t/2);  delay(t*4);   drunk(t/2);  delay(t*4);   walk(2,t*2);  backyard(2,t*2);  goingUp(t*2);  goingUp(t*1);  noGravity(t*2); crusaito(1,t*2);  crusaito(1,t*8); crusaito(1,t*2); crusaito(1,t*8); crusaito(1,t*2); crusaito(1,t*3);\n'
+  + 'delay(t);  primera_parte();    for (int i=0; i<32; i++){   flapping(1,t/2);  delay(t/2); }   for(int i=0;i<4;i++) servo[i].SetPosition(90);} \n'
+  + 'void oscillate(int A[N_SERVOS], int O[N_SERVOS], int T, double phase_diff[N_SERVOS]){  for (int i=0; i<4; i++) {   servo[i].SetO(O[i]); servo[i].SetA(A[i]); servo[i].SetT(T); servo[i].SetPh(phase_diff[i]); }  double ref=millis(); for (double x=ref; x<T+ref; x=millis()){ for (int i=0; i<4; i++){ servo[i].refresh(); }}}\n'
+  + 'unsigned long final_time; unsigned long interval_time;int oneTime;int iteration;float increment[N_SERVOS];  int oldPosition[]={90,90,90,90}; \n'
+  + 'void moveNServos(int time, int  newPosition[]){\n'
+  + 'for(int i=0;i<N_SERVOS;i++)	increment[i] = ((newPosition[i])-oldPosition[i])/(time/INTERVALTIME);  final_time =  millis() + time;  iteration = 1; \n'
+  + 'while(millis() < final_time){ interval_time = millis()+INTERVALTIME;   oneTime=0;      while(millis()<interval_time){	 if(oneTime<1){ for(int i=0;i<N_SERVOS;i++){  servo[i].SetPosition(oldPosition[i] + (iteration * increment[i])); }	iteration++;oneTime++; } } }  \n'
+  + 'for(int i=0;i<N_SERVOS;i++){	 oldPosition[i] = newPosition[i]; }   }\n'
+  + 'void goingUp(int tempo){\n'
+  + 'pause=millis(); for(int i=0;i<4;i++) servo[i].SetPosition(90);\n'
+  + 'delay(tempo);servo[0].SetPosition(80);servo[1].SetPosition(100);delay(tempo);servo[0].SetPosition(70); servo[1].SetPosition(110); delay(tempo); servo[0].SetPosition(60); servo[1].SetPosition(120); delay(tempo); servo[0].SetPosition(50); servo[1].SetPosition(130); delay(tempo); servo[0].SetPosition(40); servo[1].SetPosition(140); delay(tempo); servo[0].SetPosition(30); servo[1].SetPosition(150);delay(tempo); servo[0].SetPosition(20); servo[1].SetPosition(160); delay(tempo); while(millis()<pause+8*t);}\n'
+  + 'void primera_parte(){\n'
+  + 'int move1[4] = {60,120,90,90}; int move2[4] = {90,90,90,90}; int move3[4] = {40,140,90,90}; for(int x=0; x<3; x++){ for(int i=0; i<3; i++){  lateral_fuerte(1,t/2);  lateral_fuerte(0,t/4); lateral_fuerte(1,t/4);  delay(t);  } pause=millis(); for(int i=0;i<4;i++) servo[i].SetPosition(90); moveNServos(t*0.4,move1); moveNServos(t*0.4,move2); while(millis()<(pause+t*2)); }for(int i=0; i<2; i++){ lateral_fuerte(1,t/2); lateral_fuerte(0,t/4); lateral_fuerte(1,t/4); delay(t); } pause=millis(); for(int i=0;i<4;i++) servo[i].SetPosition(90);crusaito(1,t*1.4); moveNServos(t*1,move3); for(int i=0;i<4;i++) servo[i].SetPosition(90); while(millis()<(pause+t*4)); }\n'
+  + 'void segunda_parte(){\n'
+  + 'int move1[4] = {90,90,80,100};int move2[4] = {90,90,100,80};int move3[4] = {90,90,80,100};int move4[4] = {90,90,100,80};   int move5[4] = {40,140,80,100};int move6[4] = {40,140,100,80};int move7[4] = {90,90,80,100};int move8[4] = {90,90,100,80}; int move9[4] = {40,140,80,100}; int move10[4] = {40,140,100,80}; int move11[4] = {90,90,80,100};int move12[4] = {90,90,100,80};\n'
+  + 'for(int x=0; x<7; x++){ for(int i=0; i<3; i++){ pause=millis(); moveNServos(t*0.15,move1); moveNServos(t*0.15,move2); moveNServos(t*0.15,move3); moveNServos(t*0.15,move4);  while(millis()<(pause+t)); }pause=millis(); moveNServos(t*0.15,move5); moveNServos(t*0.15,move6); moveNServos(t*0.15,move7); moveNServos(t*0.15,move8);  while(millis()<(pause+t));  }\n'
+  + 'for(int i=0; i<3; i++){ pause=millis();moveNServos(t*0.15,move9);moveNServos(t*0.15,move10);moveNServos(t*0.15,move11); moveNServos(t*0.15,move12);while(millis()<(pause+t));}}\n'
+  + 'void lateral_fuerte(boolean side, int tempo){\n'
+  + 'for(int i=0;i<4;i++) servo[i].SetPosition(90);if (side) servo[0].SetPosition(40);else servo[1].SetPosition(140);delay(tempo/2);servo[0].SetPosition(90);servo[1].SetPosition(90);delay(tempo/2);}\n'
+  + 'void drunk (int tempo){\n'
+  + 'pause=millis();int move1[] = {60,70,90,90};int move2[] = {110,120,90,90};int move3[] = {60,70,90,90};int move4[] = {110,120,90,90};moveNServos(tempo*0.235,move1);  moveNServos(tempo*0.235,move2);moveNServos(tempo*0.235,move3);moveNServos(tempo*0.235,move4);while(millis()<(pause+tempo));}\n'
+  + 'void noGravity(int tempo){int move1[4] = {120,140,90,90};int move2[4] = {140,140,90,90};int move3[4] = {120,140,90,90};int move4[4] = {90,90,90,90};for(int i=0;i<4;i++) servo[i].SetPosition(90);for(int i=0;i<N_SERVOS;i++) oldPosition[i]=90;moveNServos(tempo*2,move1);moveNServos(tempo*2,move2);delay(tempo*2);moveNServos(tempo*2,move3);moveNServos(tempo*2,move4);}\n'
+  + 'void kickLeft(int tempo){\n'
+  + 'for(int i=0;i<4;i++) servo[i].SetPosition(90);delay(tempo);servo[0].SetPosition(50); servo[1].SetPosition(70);delay(tempo);servo[0].SetPosition(80); servo[1].SetPosition(70); delay(tempo/4);servo[0].SetPosition(30); servo[1].SetPosition(70);delay(tempo/4);servo[0].SetPosition(80);servo[1].SetPosition(70); delay(tempo/4);servo[0].SetPosition(30); servo[1].SetPosition(70); delay(tempo/4);servo[0].SetPosition(80);servo[1].SetPosition(70); delay(tempo); }\n'
+  + 'void kickRight(int tempo){\n'
+  + 'for(int i=0;i<4;i++) servo[i].SetPosition(90);delay(tempo);servo[0].SetPosition(110);servo[1].SetPosition(130); delay(tempo);servo[0].SetPosition(110); servo[1].SetPosition(100); delay(tempo/4);servo[0].SetPosition(110); servo[1].SetPosition(150); delay(tempo/4);servo[0].SetPosition(110); servo[1].SetPosition(80); delay(tempo/4);servo[0].SetPosition(110); servo[1].SetPosition(150); delay(tempo/4);servo[0].SetPosition(110); servo[1].SetPosition(100); delay(tempo);}\n'
+  + 'void walk(int steps, int T){int A[4]= {15, 15, 30, 30};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90)};for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff); }\n'
+  + 'void run(int steps, int T){int A[4]= {10, 10, 10, 10};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90)};  for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff); }\n'
+  + 'void backyard(int steps, int T){int A[4]= {15, 15, 30, 30};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(-90), DEG2RAD(-90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void backyardSlow(int steps, int T){int A[4]= {15, 15, 30, 30};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(-90), DEG2RAD(-90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void turnLeft(int steps, int T){int A[4]= {20, 20, 10, 30};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90)};  for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void turnRight(int steps, int T){int A[4]= {20, 20, 30, 10};int O[4] = {0, 0, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void moonWalkRight(int steps, int T){int A[4]= {25, 25, 0, 0};int O[4] = {-15 ,15, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(180 + 120), DEG2RAD(90), DEG2RAD(90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void moonWalkLeft(int steps, int T){int A[4]= {25, 25, 0, 0};int O[4] = {-15, 15, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(180 - 120), DEG2RAD(90), DEG2RAD(90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void crusaito(int steps, int T){int A[4]= {25, 25, 30, 30};int O[4] = {- 15, 15, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(180 + 120), DEG2RAD(90), DEG2RAD(90)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void swing(int steps, int T){int A[4]= {25, 25, 0, 0};int O[4] = {-15, 15, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(0), DEG2RAD(90), DEG2RAD(90)};  for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void upDown(int steps, int T){int A[4]= {25, 25, 0, 0};int O[4] = {-15, 15, 0, 0};double phase_diff[4] = {DEG2RAD(180), DEG2RAD(0), DEG2RAD(270), DEG2RAD(270)}; for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void flapping(int steps, int T){int A[4]= {15, 15, 8, 8};int O[4] = {-A[0], A[1], 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(180), DEG2RAD(90), DEG2RAD(-90)};for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);}\n'
+  + 'void test(int steps, int T){int A[4]= {15, 15, 8, 8};int O[4] = {-A[0] + 10, A[1] - 10, 0, 0};double phase_diff[4] = {DEG2RAD(0), DEG2RAD(180), DEG2RAD(90), DEG2RAD(-90)};for(int i=0;i<steps;i++)oscillate(A,O, T, phase_diff);\n'
+  return code;
+};
