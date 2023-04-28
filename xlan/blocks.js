@@ -435,7 +435,6 @@ Blockly.Blocks.i2s_media_google_tts = {
 };
 
 Blockly.Blocks.otto9_configuration = {init: function() {
-
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YL");
@@ -459,7 +458,6 @@ Blockly.Blocks.otto9_configuration = {init: function() {
 };
 
 Blockly.Blocks.otto_i2cConfig = {init: function() {
-
     this.appendDummyInput()
     .appendField("SDA")
     .appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_SDA");
@@ -474,7 +472,6 @@ Blockly.Blocks.otto_i2cConfig = {init: function() {
 };
 
 Blockly.Blocks.otto_arms_init = {init: function() {
-
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_AL");
@@ -488,7 +485,7 @@ Blockly.Blocks.otto_arms_init = {init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
-Blockly.Blocks.otto_arms = { init: function() {
+Blockly.Blocks.otto_arms = {init: function() {
     this.appendDummyInput().appendField(Blockly.Msg.CAT_OTTO_ARMS).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -506,15 +503,5 @@ Blockly.Blocks.otto_arms_home = {init: function() {
   this.setColour("#32D900");
   this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Blocks.otto9_smooth = {init: function() {
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-  }
 };
 

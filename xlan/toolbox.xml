@@ -115,8 +115,8 @@
         <field name="PIN_AL">6</field>
         <field name="PIN_AR">7</field>
       </block>
-    <block type="otto_arms_home"></block>
-    <block type="otto_arms"></block>
+      <block type="otto_arms_home"></block>
+      <block type="otto_arms"></block>
     </category>
   </category>
 </category>
