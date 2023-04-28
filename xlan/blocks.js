@@ -435,22 +435,22 @@ Blockly.Blocks.i2s_media_google_tts = {
 };
 
 Blockly.Blocks.otto9_configuration = {init: function() {
-	var card=window.localStorage.card;
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YL");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YR");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_RL");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_RR");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_Buzzer");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -459,13 +459,13 @@ Blockly.Blocks.otto9_configuration = {init: function() {
 };
 
 Blockly.Blocks.otto_i2cConfig = {init: function() {
-  var card=window.localStorage.card;
+
     this.appendDummyInput()
     .appendField("SDA")
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SDA");
+    .appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_SDA");
     this.appendDummyInput()
     .appendField("SCL")
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SCL");
+    .appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_SCL");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -474,13 +474,13 @@ Blockly.Blocks.otto_i2cConfig = {init: function() {
 };
 
 Blockly.Blocks.otto_arms_init = {init: function() {
-    var card=window.localStorage.card;
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_AL");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
+	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_AR");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
