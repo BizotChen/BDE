@@ -434,7 +434,8 @@ Blockly.Blocks.i2s_media_google_tts = {
   }
 };
 
-Blockly.Blocks.otto9_configuration = {init: function() {
+Blockly.Blocks.otto9_configuration = {
+  init: function() {
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YL");
