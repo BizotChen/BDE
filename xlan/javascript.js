@@ -249,21 +249,21 @@ Blockly.Arduino.i2s_media_google_tts = function(block) {
 }
 
 Blockly.Arduino.otto9_configuration = function(block) {
-  var PIN_YL= block.getFieldValue('PIN_YL');
-  var PIN_YR= block.getFieldValue('PIN_YR');
-  var PIN_RL= block.getFieldValue('PIN_RL');
-  var PIN_RR= block.getFieldValue('PIN_RR');
-  var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
+  var PIN_YL = block.getFieldValue('PIN_YL');
+  var PIN_YR = block.getFieldValue('PIN_YR');
+  var PIN_RL = block.getFieldValue('PIN_RL');
+  var PIN_RR = block.getFieldValue('PIN_RR');
+  var PIN_Buzzer = block.getFieldValue('PIN_Buzzer');
 
   Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\nOtto Otto;';
 
-  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
- 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
-	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
-    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
-    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL
+    + '#define RightLeg '+ PIN_YR +
+    + '#define LeftFoot '+ PIN_RL +
+    + '#define RightFoot '+ PIN_RR +
+    + '#define Buzzer '+ PIN_Buzzer;
 
-  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n';
+  Blockly.Arduino.setups_['otto_init'] = 'Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n';
   var code = '';
   return code;
-};
+}

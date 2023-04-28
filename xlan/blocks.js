@@ -439,15 +439,19 @@ Blockly.Blocks.otto9_configuration = {
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YL");
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_YR");
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_RL");
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_RR");
+
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_Buzzer");
