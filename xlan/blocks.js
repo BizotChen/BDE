@@ -454,54 +454,6 @@ Blockly.Blocks.otto9_configuration = {init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#32D900");
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Blocks.otto_i2cConfig = {init: function() {
-    this.appendDummyInput()
-    .appendField("SDA")
-    .appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_SDA");
-    this.appendDummyInput()
-    .appendField("SCL")
-    .appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_SCL");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Blocks.otto_arms_init = {init: function() {
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_AL");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown([["2","2"],["3","3"],["4","4"],["5","5"]]), "PIN_AR");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Blocks.otto_arms = {init: function() {
-    this.appendDummyInput().appendField(Blockly.Msg.CAT_OTTO_ARMS).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_ARMS_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
-};
-
-Blockly.Blocks.otto_arms_home = {init: function() {
-  this.setInputsInline(false);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
