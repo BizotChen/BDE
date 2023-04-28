@@ -96,5 +96,27 @@
       <field name="PIN_RR">5</field>
       <field name="PIN_Buzzer">13</field>
     </block>
+    <block type="otto_home"></block>
+    <block type="otto_move"></block>
+    <block type="otto_dance"></block>
+    <block type="otto_do"></block>
+    <block type="otto_sound"></block>
+    <block type="otto_gesture"></block>
+    <block type="otto9_app"></block>
+    <block type="otto_movelegs">
+    </block>		
+    <block type="otto_moveservos">
+    </block>
+    <block type="otto_calibration">
+    </block>
+    <block type="otto_eeprom"></block>
+    <category name="CAT_OTTO_ARMS" colour="#32D900">
+      <block type="otto_arms_init">
+        <field name="PIN_AL">6</field>
+        <field name="PIN_AR">7</field>
+      </block>
+      <block type="otto_arms_home"></block>
+      <block type="otto_arms"></block>
+    </category>
   </category>
 </category>
