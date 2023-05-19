@@ -44,7 +44,7 @@ Blockly.Arduino.xlan_serial_read_an_inline_string = function(block) {
 Blockly.Arduino.xlan_ble_serial_init = function(block) {
   Blockly.Arduino.definitions_['xlan_ble_serial_init'] = '#include <BluetoothSerial.h>\nBluetoothSerial BLESerial;';
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  Blockly.Arduino.setups_['xlan_ble_serial_init'] = 'BLESerial.begin("' + value_text + '");';
+  Blockly.Arduino.setups_['xlan_ble_serial_init'] = 'BLESerial.begin(' + value_text + ');';
   var code = '';
 
   return code;
