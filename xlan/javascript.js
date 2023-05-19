@@ -1,6 +1,6 @@
 Blockly.Arduino.xlan_serial_init = function(block) {
   var dropdown_baud = block.getFieldValue('baud');
-  Blockly.Arduino.setups_.xlan_serial_init = 'Serial.begin(' + dropdown_baud + ');';
+  Blockly.Arduino.setups_['xlan_serial_init'] = 'Serial.begin(' + dropdown_baud + ');';
   var code = '';
 
   return code;
@@ -42,8 +42,8 @@ Blockly.Arduino.xlan_serial_read_an_inline_string = function(block) {
 };
 
 Blockly.Arduino.mmshield_init = function(block) {
-  Blockly.Arduino.definitions_.mmshield_init = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
-  Blockly.Arduino.setups_.mmshield_init = 'mm.Init();';
+  Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
+  Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';
   var code = '';
 
   return code;
@@ -98,8 +98,8 @@ Blockly.Arduino.mmshield_oled_clear = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_init = function(block) {
-  Blockly.Arduino.definitions_.mmshield_oled_init = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
-  Blockly.Arduino.setups_.mmshield_oled_init = 'display.init();';
+  Blockly.Arduino.definitions_['mmshield_oled_init'] = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
+  Blockly.Arduino.setups_['mmshield_oled_init'] = 'display.init();';
   var code = '';
 
   return code;
@@ -248,99 +248,3 @@ Blockly.Arduino.i2s_media_google_tts = function(block) {
   return 'textToSpeech(' + value_text + ', \"' + dropdown_lang + '");\n';
 }
 
-Blockly.Arduino.otto9_configuration = function(block) {
-  var PIN_YL= block.getFieldValue('PIN_YL');
-  var PIN_YR= block.getFieldValue('PIN_YR');
-  var PIN_RL= block.getFieldValue('PIN_RL');
-  var PIN_RR= block.getFieldValue('PIN_RR');
-  var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
-
-  Blockly.Arduino.definitions_.otto_lib = '#include <Otto.h>\nOtto Otto;';
-
-  Blockly.Arduino.definitions_.otto_legs = '#define LeftLeg ' + PIN_YL + '\n'
-    + '#define RightLeg ' + PIN_YR + '\n'
-    + '#define LeftFoot ' + PIN_RL + '\n'
-    + '#define RightFoot ' + PIN_RR + '\n'
-    + '#define Buzzer ' + PIN_Buzzer; 
-
-  Blockly.Arduino.setups_.otto_init = 'Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);';
-
-  var code = '';
-  return code;
-};
-
-Blockly.Arduino.otto_i2cConfig = function(block) {
-  var PIN_SDA= block.getFieldValue('PIN_SDA');
-  var PIN_SCL= block.getFieldValue('PIN_SCL');
-	
-  Blockly.Arduino.definitions_.otto_i2cConfig_lib = '#include <Wire.h>';
-
-  Blockly.Arduino.definitions_.otto_i2cConfig_def = '#define PIN_SDA '+ PIN_SDA +'\n'
-    + '#define PIN_SCL '+ PIN_SCL;
-	
-  Blockly.Arduino.setups_.otto_i2cConfig_begin = 'Wire.begin(PIN_SDA, PIN_SCL);';
-
-  var code = '';
-  return code;
-};
-
-Blockly.Arduino.otto_arms_init = function(block) {
-  var PIN_AL= block.getFieldValue('PIN_AL');
-  var PIN_AR= block.getFieldValue('PIN_AR');
-
-  Blockly.Arduino.definitions_.otto_arms = '#include <Servo.h>\n'
-    + 'Servo AL, AR;';
-
-  Blockly.Arduino.definitions_.otto_arms = 'int adj[] = { 0, 0 };\n'
-    + 'int pos[] = { 90,90 };\n'
-    + 'int shift = 60;\n'
-    + 'int shift_inc = 10;\n'
-    + 'int shift_delay = 50;';
-
-  Blockly.Arduino.definitions_.otto_arms = '#define PIN_AL ' + PIN_AL
-    + '#define PIN_AR ' + PIN_AR
-    + 'void move_servo() { AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]); }';
-
-  Blockly.Arduino.setups_.otto_arms = 'AL.attach(PIN_AR);\n'
-    +'AR.attach(PIN_AL);\n'
-    +'move_servo();\n'
-    +'delay(100);';
-
-  var code = '';
-  return code;
-};
-
-Blockly.Arduino.otto_arms = function(block) {
-  var dropdown_otto_arms_choice = block.getFieldValue('otto_arms_choice');
-  var code = '';
-  switch(dropdown_otto_arms_choice) {
-    case 'HANDSUP':
-      code += 'AL.write(160);\n'
-        +'AR.write(20);\n'
-        +'delay(shift_delay);';
-      break;
-    case 'HANDSDOWN':
-      code += 'AL.write(20);\n'
-        +'AR.write(160);\n'
-        +'delay(shift_delay);';
-      break;
-    case 'HANDWAVE1':
-      code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[1] = angle;    move_servo();  delay(shift_delay);}\n'
-        +'for(int angle=90+shift; angle>90-shift; angle-=shift_inc) { pos[1] = angle;  move_servo(); delay(shift_delay); }\n'
-        +'for(int angle=90-shift; angle<90; angle+=shift_inc) {pos[1] = angle;  move_servo();   delay(shift_delay); }\n';
-      break;
-    case 'HANDWAVE2':
-      code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[2] = angle;    move_servo();  delay(shift_delay);}\n'
-        +'for(int angle=90+shift; angle>90-shift; angle-=shift_inc) { pos[2] = angle;  move_servo(); delay(shift_delay); }\n'
-        +'for(int angle=90-shift; angle<90; angle+=shift_inc) {pos[2] = angle;  move_servo();   delay(shift_delay); }\n';
-      break;
-  }
-  return code;
-};
-
-Blockly.Arduino.otto_arms_home = function(block) {
-  var code = 'AL.write(90);\n'
-    + 'AR.write(90);\n'
-    + 'delay(shift_delay);\n';
-  return code;
-};
