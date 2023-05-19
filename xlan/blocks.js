@@ -83,6 +83,48 @@ Blockly.Blocks.xlan_serial_read_an_inline_string = {
   }
 };
 
+//BLE
+Blockly.Blocks.xlan_ble_serial_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial BLE Serial with name");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_ble_serial_while_loop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read data from BLE Serial");
+    this.appendStatementInput("STATEMENT")
+        .setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_ble_serial_read_a_char = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read a char to the variable")
+        .appendField(new Blockly.FieldVariable("chrCmd"), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 //MMShield32
 Blockly.Blocks.mmshield_init = {
   init: function() {

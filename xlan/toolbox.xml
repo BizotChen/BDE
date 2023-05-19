@@ -11,6 +11,13 @@
       <field name="NAME" id="Lv|?p|q-ULreM$wnVN2~">strBuffer</field>
     </block>
   </category>
+  <category name="BLE">
+    <block type="xlan_ble_serial_init"></block>
+    <block type="xlan_ble_serial_while_loop"></block>
+    <block type="xlan_ble_serial_read_a_char">
+      <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
+    </block>
+  </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>
     <category name="Motor">

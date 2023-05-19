@@ -41,6 +41,29 @@ Blockly.Arduino.xlan_serial_read_an_inline_string = function(block) {
   return code;
 };
 
+Blockly.Arduino.xlan_ble_serial_init = function(block) {
+  Blockly.Arduino.definitions_['xlan_ble_serial_init'] = '#include <BluetoothSerial.h>\nBluetoothSerial BLESerial;';
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.setups_['xlan_ble_serial_init'] = 'BLESerial.begin("' + value_text + '");';
+  var code = '';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_ble_serial_while_loop = function(block) {
+  var statement = Blockly.Arduino.statementToCode(this, "STATEMENT");
+  var code = 'while (BLESerial.available()) {\n' + statement + '\n}\n';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_ble_serial_read_a_char = function(block) {
+  var variable_name = Blockly.Arduino.nameDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+  var code = variable_name + ' = BLESerial.read();\n';
+
+  return code;
+};
+
 Blockly.Arduino.mmshield_init = function(block) {
   Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
   Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';
