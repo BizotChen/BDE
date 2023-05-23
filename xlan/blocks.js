@@ -193,7 +193,7 @@ Blockly.Blocks.xlan_camera_capture_images = {
         .appendField("Capture images");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(270);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
