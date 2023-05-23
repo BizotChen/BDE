@@ -178,34 +178,23 @@ Blockly.Arduino.mmshield_servo_write = function(block) {
 };
 
 //OLED
+Blockly.Arduino.mmshield_oled_init = function(block) {
+  Blockly.Arduino.definitions_.mmshield_oled_init = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
+  Blockly.Arduino.setups_.mmshield_oled_init = 'display.init();';
+  var code = '';
+
+  return code;
+};
+
 Blockly.Arduino.mmshield_oled_flip = function(block) {
   var code = 'display.flipScreenVertically();\n';
 
   return code;
 };
 
-Blockly.Arduino.mmshield_oled_mirror = function(block) {
-  var code = 'display.mirrorScreen();\n';
-
-  return code;
-};
-
-Blockly.Arduino.mmshield_oled_reset = function(block) {
-  var code = 'display.resetOrientation();\n';
-
-  return code;
-};
-
-Blockly.Arduino.mmshield_oled_clear = function(block) {
-  var code = 'display.clear();\ndisplay.display();\n';
-
-  return code;
-};
-
-Blockly.Arduino.mmshield_oled_init = function(block) {
-  Blockly.Arduino.definitions_.mmshield_oled_init = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
-  Blockly.Arduino.setups_.mmshield_oled_init = 'display.init();';
-  var code = '';
+Blockly.Arduino.mmshield_oled_set_align = function(block) {
+  var dropdown_align = block.getFieldValue('align');
+  var code = 'display.setTextAlignment(' + dropdown_align + ');\n';
 
   return code;
 };
@@ -226,9 +215,20 @@ Blockly.Arduino.mmshield_oled_show_msg = function(block) {
   return code;
 };
 
-Blockly.Arduino.mmshield_oled_set_align = function(block) {
-  var dropdown_align = block.getFieldValue('align');
-  var code = 'display.setTextAlignment(' + dropdown_align + ');\n';
+Blockly.Arduino.mmshield_oled_clear = function(block) {
+  var code = 'display.clear();\ndisplay.display();\n';
+
+  return code;
+};
+
+Blockly.Arduino.mmshield_oled_mirror = function(block) {
+  var code = 'display.mirrorScreen();\n';
+
+  return code;
+};
+
+Blockly.Arduino.mmshield_oled_reset = function(block) {
+  var code = 'display.resetOrientation();\n';
 
   return code;
 };

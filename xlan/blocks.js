@@ -178,7 +178,7 @@ Blockly.Blocks.xlan_ble_serial_read_a_char = {
 Blockly.Blocks.xlan_camera_init = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Initial camera with resolution")
+        .appendField("Initial a camera with resolution")
         .appendField(new Blockly.FieldDropdown([["UXGA(1600x1200)","FRAMESIZE_UXGA"], ["SXGA(1280x1024)","FRAMESIZE_SXGA"], ["XGA(1024x768)","FRAMESIZE_XGA"], ["SVGA(800x600)","FRAMESIZE_SVGA"], ["VGA(640x480)","FRAMESIZE_VGA"], ["CIF(400x296)","FRAMESIZE_CIF"], ["QVGA(320x240)","FRAMESIZE_QVGA"]]), "resolution");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -204,7 +204,7 @@ Blockly.Blocks.xlan_camera_brightness = {
 Blockly.Blocks.xlan_camera_special_effect = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set the special effect of camera:")
+        .appendField("Set the special effect of camera")
         .appendField(new Blockly.FieldDropdown([["No Effect","0"], ["Negative","1"], ["Grayscale","2"], ["Red Tint","3"], ["Green Tint","4"], ["Blue Tint","5"], ["Sepia","6"]]), "sp_effect");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -217,7 +217,7 @@ Blockly.Blocks.xlan_camera_special_effect = {
 Blockly.Blocks.xlan_camera_wb_mode = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set the white balance mode of camera:")
+        .appendField("Set the white balance mode of camera")
         .appendField(new Blockly.FieldDropdown([["Auto","0"], ["Sunny","1"], ["Cloudy","2"], ["Office","3"], ["Home","4"]]), "wb_mode");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -230,7 +230,7 @@ Blockly.Blocks.xlan_camera_wb_mode = {
 Blockly.Blocks.xlan_camera_v_flip = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Vertical flip the camera:")
+        .appendField("Vertical flip the camera")
         .appendField(new Blockly.FieldDropdown([["Disabled","0"], ["Enabled","1"]]), "v_flip");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -243,7 +243,7 @@ Blockly.Blocks.xlan_camera_v_flip = {
 Blockly.Blocks.xlan_camera_h_mirror = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Horizontal mirror the camera:")
+        .appendField("Horizontal mirror the camera")
         .appendField(new Blockly.FieldDropdown([["Disabled","0"], ["Enabled","1"]]), "h_mirror");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -324,6 +324,18 @@ Blockly.Blocks.mmshield_servo_write = {
 };
 
 //OLED
+Blockly.Blocks.mmshield_oled_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks.mmshield_oled_flip = {
   init: function() {
     this.appendDummyInput()
@@ -336,46 +348,11 @@ Blockly.Blocks.mmshield_oled_flip = {
   }
 };
 
-Blockly.Blocks.mmshield_oled_mirror = {
+Blockly.Blocks.mmshield_oled_set_align = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Mirror OLED display");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.mmshield_oled_reset = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Reset OLED orientation");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.mmshield_oled_clear = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Clear OLED display");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(270);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.mmshield_oled_init = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Initial OLED display");
+        .appendField("Set string to align ")
+        .appendField(new Blockly.FieldDropdown([["left","TEXT_ALIGN_LEFT"], ["center","TEXT_ALIGN_CENTER"], ["right","TEXT_ALIGN_RIGHT"]]), "align");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
@@ -417,11 +394,34 @@ Blockly.Blocks.mmshield_oled_show_msg = {
   }
 };
 
-Blockly.Blocks.mmshield_oled_set_align = {
+Blockly.Blocks.mmshield_oled_clear = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set string to align ")
-        .appendField(new Blockly.FieldDropdown([["left","TEXT_ALIGN_LEFT"], ["center","TEXT_ALIGN_CENTER"], ["right","TEXT_ALIGN_RIGHT"]]), "align");
+        .appendField("Clear OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_mirror = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mirror OLED display");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.mmshield_oled_reset = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Reset OLED orientation");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
