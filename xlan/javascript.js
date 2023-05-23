@@ -78,7 +78,7 @@ Blockly.Arduino.xlan_set_line_token = function(block) {
 
 Blockly.Arduino.xlan_send_line_msg = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String msg) {\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Length: " + String(msg.length() + 8));\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println();\n    client_tcp.println("message=" + msg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\nelse{Serial.println("failure");}\n}\n';
+  Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String msg) {\n  client_tcp.setInsecure();\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Length: " + String(msg.length() + 8));\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println();\n    client_tcp.println("message=" + msg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\nelse{Serial.println("failure");}\n}\n';
   var code = 'sendLineMsg(' + value_text + ');';
 
   return code;
