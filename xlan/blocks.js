@@ -84,48 +84,6 @@ Blockly.Blocks.xlan_serial_read_an_inline_string = {
   }
 };
 
-//BLE
-Blockly.Blocks.xlan_ble_serial_init = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Initial BLE Serial with name");
-    this.appendValueInput("TEXT")
-        .setCheck("String");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(110);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.xlan_ble_serial_while_loop = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Read data from BLE Serial");
-    this.appendStatementInput("STATEMENT")
-        .setCheck(null);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(110);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.xlan_ble_serial_read_a_char = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Read a char to the variable")
-        .appendField(new Blockly.FieldVariable("chrCmd"), "NAME");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(110);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 //Line
 Blockly.Blocks.xlan_set_line_token = {
   init: function() {
@@ -167,6 +125,75 @@ Blockly.Blocks.xlan_send_line_msg_with_image = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//BLE
+Blockly.Blocks.xlan_ble_serial_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial BLE Serial with name");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.appendDummyInput();
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(110);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_ble_serial_while_loop = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read data from BLE Serial");
+    this.appendStatementInput("STATEMENT")
+        .setCheck(null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(110);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_ble_serial_read_a_char = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read a char to the variable")
+        .appendField(new Blockly.FieldVariable("chrCmd"), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(110);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//Camera
+Blockly.Blocks.xlan_camera_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial Camera with resolution")
+        .appendField(new Blockly.FieldDropdown([["UXGA(1600x1200)","FRAMESIZE_UXGA"], ["SXGA(1280x1024)","FRAMESIZE_SXGA"], ["XGA(1024x768)","FRAMESIZE_XGA"], ["SVGA(800x600)","FRAMESIZE_SVGA"], ["VGA(640x480)","FRAMESIZE_VGA"], ["CIF(400x296)","FRAMESIZE_CIF"], ["QVGA(320x240)","FRAMESIZE_QVGA"]]), "resolution");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_capture_images = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Capture images");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
  this.setTooltip("");
  this.setHelpUrl("");
   }

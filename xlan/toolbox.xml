@@ -11,17 +11,23 @@
       <field name="NAME" id="Lv|?p|q-ULreM$wnVN2~">strBuffer</field>
     </block>
   </category>
-  <category name="BLE">
-    <block type="xlan_ble_serial_init"></block>
-    <block type="xlan_ble_serial_while_loop"></block>
-    <block type="xlan_ble_serial_read_a_char">
-      <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
-    </block>
-  </category>
   <category name="LINE">
     <block type="xlan_set_line_token"></block>
     <block type="xlan_send_line_msg"></block>
     <block type="xlan_send_line_msg_with_image"></block>
+  </category>
+  <category name="ESP32">
+    <category name="BLE">
+      <block type="xlan_ble_serial_init"></block>
+      <block type="xlan_ble_serial_while_loop"></block>
+      <block type="xlan_ble_serial_read_a_char">
+        <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
+      </block>
+    </category>
+    <category name="Camera">
+      <block type="xlan_camera_init"></block>
+      <block type="xlan_camera_capture_images"></block>
+    </category>
   </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>
