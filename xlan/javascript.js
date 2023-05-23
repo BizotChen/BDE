@@ -95,8 +95,8 @@ Blockly.Arduino.xlan_ble_serial_read_a_char = function(block) {
 //Camera
 Blockly.Arduino.xlan_camera_init = function(block) {
   var dropdown_resolution = block.getFieldValue('resolution');
-  Blockly.Arduino.definitions_.define_camera_include = '#include "esp_camera.h"\n\n#define PWDN_GPIO_NUM 32\n#define RESET_GPIO_NUM -1\n#define XCLK_GPIO_NUM 0\n#define SIOD_GPIO_NUM 26\n#define SIOC_GPIO_NUM 27\n#define Y9_GPIO_NUM 35\n#define Y8_GPIO_NUM 34\n#define Y7_GPIO_NUM 39\n#define Y6_GPIO_NUM 36\n#define Y5_GPIO_NUM 21\n#define Y4_GPIO_NUM 19\n#define Y3_GPIO_NUM 18\n#define Y2_GPIO_NUM 5\n#define VSYNC_GPIO_NUM 25\n#define HREF_GPIO_NUM 23\n#define PCLK_GPIO_NUM 22\nsensor_t *cam;';
-  Blockly.Arduino.setups_.xlan_camera_init = 'camera_config_t config;\n  config.ledc_channel = LEDC_CHANNEL_0;\n  config.ledc_timer = LEDC_TIMER_0;\n  config.pin_d0 = Y2_GPIO_NUM;\n  config.pin_d1 = Y3_GPIO_NUM;\n  config.pin_d2 = Y4_GPIO_NUM;\n  config.pin_d3 = Y5_GPIO_NUM;\n  config.pin_d4 = Y6_GPIO_NUM;\n  config.pin_d5 = Y7_GPIO_NUM;\n  config.pin_d6 = Y8_GPIO_NUM;\n  config.pin_d7 = Y9_GPIO_NUM;\n  config.pin_xclk = XCLK_GPIO_NUM;\n  config.pin_pclk = PCLK_GPIO_NUM;\n  config.pin_vsync = VSYNC_GPIO_NUM;\n  config.pin_href = HREF_GPIO_NUM;\n  config.pin_sscb_sda = SIOD_GPIO_NUM;\n  config.pin_sscb_scl = SIOC_GPIO_NUM;\n  config.pin_pwdn = PWDN_GPIO_NUM;\n  config.pin_reset = RESET_GPIO_NUM;\n  config.xclk_freq_hz = 20000000;\n  config.pixel_format = PIXFORMAT_JPEG;\n  config.frame_size = ' + dropdown_resolution + ';\n  config.fb_count = 2;\n  config.jpeg_quality = 10;\n\n  esp_err_t err = esp_camera_init(&config);\n  if (err != ESP_OK)\n    return;\n  cam = esp_camera_sensor_get();';
+  Blockly.Arduino.definitions_.define_camera_include = '#include "esp_camera.h"\n\n#define PWDN_GPIO_NUM 32\n#define RESET_GPIO_NUM -1\n#define XCLK_GPIO_NUM 0\n#define SIOD_GPIO_NUM 26\n#define SIOC_GPIO_NUM 27\n#define Y9_GPIO_NUM 35\n#define Y8_GPIO_NUM 34\n#define Y7_GPIO_NUM 39\n#define Y6_GPIO_NUM 36\n#define Y5_GPIO_NUM 21\n#define Y4_GPIO_NUM 19\n#define Y3_GPIO_NUM 18\n#define Y2_GPIO_NUM 5\n#define VSYNC_GPIO_NUM 25\n#define HREF_GPIO_NUM 23\n#define PCLK_GPIO_NUM 22\n\nsensor_t *cam;';
+  Blockly.Arduino.setups_.xlan_camera_init = 'camera_config_t config;\n  config.ledc_channel = LEDC_CHANNEL_0;\n  config.ledc_timer = LEDC_TIMER_0;\n  config.pin_d0 = Y2_GPIO_NUM;\n  config.pin_d1 = Y3_GPIO_NUM;\n  config.pin_d2 = Y4_GPIO_NUM;\n  config.pin_d3 = Y5_GPIO_NUM;\n  config.pin_d4 = Y6_GPIO_NUM;\n  config.pin_d5 = Y7_GPIO_NUM;\n  config.pin_d6 = Y8_GPIO_NUM;\n  config.pin_d7 = Y9_GPIO_NUM;\n  config.pin_xclk = XCLK_GPIO_NUM;\n  config.pin_pclk = PCLK_GPIO_NUM;\n  config.pin_vsync = VSYNC_GPIO_NUM;\n  config.pin_href = HREF_GPIO_NUM;\n  config.pin_sscb_sda = SIOD_GPIO_NUM;\n  config.pin_sscb_scl = SIOC_GPIO_NUM;\n  config.pin_pwdn = PWDN_GPIO_NUM;\n  config.pin_reset = RESET_GPIO_NUM;\n  config.xclk_freq_hz = 20000000;\n  config.pixel_format = PIXFORMAT_JPEG;\n  config.frame_size = ' + dropdown_resolution + ';\n  config.fb_count = 2;\n  config.jpeg_quality = 10;\n\n  esp_err_t err = esp_camera_init(&config);\n  if (err != ESP_OK)\n    return;\n\n  cam = esp_camera_sensor_get();\n';
   var code = '';
 
   return code;
@@ -104,35 +104,35 @@ Blockly.Arduino.xlan_camera_init = function(block) {
 
 Blockly.Arduino.xlan_camera_brightness = function(block) {
   var dropdown_brightness = block.getFieldValue('brightness');
-  var code = 'cam->set_brightness(cam, ' + dropdown_brightness + ');';
+  var code = '\ncam->set_brightness(cam, ' + dropdown_brightness + ');';
 
   return code;
 };
 
 Blockly.Arduino.xlan_camera_special_effect = function(block) {
   var dropdown_sp_effect = block.getFieldValue('sp_effect');
-  var code = 'cam->set_special_effect(cam, ' + dropdown_sp_effect + ');';
+  var code = '\ncam->set_special_effect(cam, ' + dropdown_sp_effect + ');';
 
   return code;
 };
 
 Blockly.Arduino.xlan_camera_wb_mode = function(block) {
   var dropdown_wb_mode = block.getFieldValue('wb_mode');
-  var code = 'cam->set_whitebal(cam, ' + dropdown_wb_mode + ');';
+  var code = '\ncam->set_whitebal(cam, ' + dropdown_wb_mode + ');';
 
   return code;
 };
 
 Blockly.Arduino.xlan_camera_v_flip = function(block) {
   var dropdown_v_flip = block.getFieldValue('v_flip');
-  var code = 'cam->set_vflip(cam, ' + dropdown_v_flip + ');';
+  var code = '\ncam->set_vflip(cam, ' + dropdown_v_flip + ');';
 
   return code;
 };
 
 Blockly.Arduino.xlan_camera_h_mirror = function(block) {
   var dropdown_h_mirror = block.getFieldValue('h_mirror');
-  var code = 'cam->set_hmirror(cam, ' + dropdown_h_mirror + ');';
+  var code = '\ncam->set_hmirror(cam, ' + dropdown_h_mirror + ');';
 
   return code;
 };

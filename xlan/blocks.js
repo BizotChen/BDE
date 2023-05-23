@@ -204,7 +204,7 @@ Blockly.Blocks.xlan_camera_brightness = {
 Blockly.Blocks.xlan_camera_special_effect = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set the brightness of camera")
+        .appendField("Set the special effect of camera:")
         .appendField(new Blockly.FieldDropdown([["No Effect","0"], ["Negative","1"], ["Grayscale","2"], ["Red Tint","3"], ["Green Tint","4"], ["Blue Tint","5"], ["Sepia","6"]]), "sp_effect");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -217,7 +217,7 @@ Blockly.Blocks.xlan_camera_special_effect = {
 Blockly.Blocks.xlan_camera_wb_mode = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set the white balance of camera")
+        .appendField("Set the white balance mode of camera:")
         .appendField(new Blockly.FieldDropdown([["Auto","0"], ["Sunny","1"], ["Cloudy","2"], ["Office","3"], ["Home","4"]]), "wb_mode");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
