@@ -178,8 +178,73 @@ Blockly.Blocks.xlan_ble_serial_read_a_char = {
 Blockly.Blocks.xlan_camera_init = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Initial Camera with resolution")
+        .appendField("Initial camera with resolution")
         .appendField(new Blockly.FieldDropdown([["UXGA(1600x1200)","FRAMESIZE_UXGA"], ["SXGA(1280x1024)","FRAMESIZE_SXGA"], ["XGA(1024x768)","FRAMESIZE_XGA"], ["SVGA(800x600)","FRAMESIZE_SVGA"], ["VGA(640x480)","FRAMESIZE_VGA"], ["CIF(400x296)","FRAMESIZE_CIF"], ["QVGA(320x240)","FRAMESIZE_QVGA"]]), "resolution");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_brightness = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set the brightness of camera")
+        .appendField(new Blockly.FieldDropdown([["-2","-2"], ["0","0"], ["2","2"]]), "brightness");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_special_effect = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set the brightness of camera")
+        .appendField(new Blockly.FieldDropdown([["No Effect","0"], ["Negative","1"], ["Grayscale","2"], ["Red Tint","3"], ["Green Tint","4"], ["Blue Tint","5"], ["Sepia","6"]]), "sp_effect");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_wb_mode = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set the white balance of camera")
+        .appendField(new Blockly.FieldDropdown([["Auto","0"], ["Sunny","1"], ["Cloudy","2"], ["Office","3"], ["Home","4"]]), "wb_mode");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_v_flip = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Vertical flip the camera:")
+        .appendField(new Blockly.FieldDropdown([["Disabled","0"], ["Enabled","1"]]), "v_flip");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_camera_h_mirror = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Horizontal mirror the camera:")
+        .appendField(new Blockly.FieldDropdown([["Disabled","0"], ["Enabled","1"]]), "h_mirror");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);

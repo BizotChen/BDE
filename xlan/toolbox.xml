@@ -26,6 +26,11 @@
     </category>
     <category name="Camera">
       <block type="xlan_camera_init"></block>
+      <block type="xlan_camera_brightness"></block>
+      <block type="xlan_camera_special_effect"></block>
+      <block type="xlan_camera_wb_mode"></block>
+      <block type="xlan_camera_v_flip"></block>
+      <block type="xlan_camera_h_mirror"></block>
       <block type="xlan_camera_capture_images"></block>
     </category>
   </category>

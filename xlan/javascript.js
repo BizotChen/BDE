@@ -55,7 +55,7 @@ Blockly.Arduino.xlan_set_line_token = function(block) {
 Blockly.Arduino.xlan_send_line_msg = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String msg) {\n  client_tcp.setInsecure();\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Length: " + String(msg.length() + 8));\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println();\n    client_tcp.println("message=" + msg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
-  var code = 'sendLineMsg(' + value_text + ');';
+  var code = '\nsendLineMsg(' + value_text + ');';
 
   return code;
 };
@@ -63,7 +63,7 @@ Blockly.Arduino.xlan_send_line_msg = function(block) {
 Blockly.Arduino.xlan_send_line_msg_with_image = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   Blockly.Arduino.definitions_.xlan_set_line_msg_with_image = 'void sendLineMsgWithImage(String msg, camera_fb_t *fb) {\n  client_tcp.setInsecure();\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    String head = "--Cusboundary\\r\\nContent-Disposition: form-data;";\n    head += "name=\\"message\\"; \\r\\n\\r\\n" + msg + "\\r\\n";\n    head += "--Cusboundary\\r\\n";\n    head += "Content-Disposition: form-data;name=\\"imageFile\\";";\n    head += "filename=\\"esp32-cam.jpg\\"\\r\\nContent-Type: image/jpeg\\r\\n\\r\\n";\n    String tail = "\\r\\n--Cusboundary--\\r\\n";\n    uint16_t imageLen = fb->len;\n    uint16_t extraLen = head.length() + tail.length();\n    uint16_t totalLen = imageLen + extraLen;\n\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Length: " + String(totalLen));\n    client_tcp.println("Content-Type: multipart/form-data;boundary=Cusboundary");\n    client_tcp.println();\n    client_tcp.print(head);\n    uint8_t *fbBuf = fb->buf;\n    size_t fbLen = fb->len;\n\n    for (size_t n = 0; n < fbLen; n = n + 2048)\n    {\n      if (n + 2048 < fbLen)\n      {\n        client_tcp.write(fbBuf, 2048);\n        fbBuf += 2048;\n      }\n      else if (fbLen % 2048 > 0)\n      {\n        size_t remainder = fbLen % 2048;\n        client_tcp.write(fbBuf, remainder);\n      }\n    }\n    client_tcp.print(tail);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
-  var code = 'sendLineMsgWithImage(' + value_text + ', fb);\nesp_camera_fb_return(fb);\n';
+  var code = '\nsendLineMsgWithImage(' + value_text + ', fb);\nesp_camera_fb_return(fb);\n';
 
   return code;
 };
@@ -95,15 +95,50 @@ Blockly.Arduino.xlan_ble_serial_read_a_char = function(block) {
 //Camera
 Blockly.Arduino.xlan_camera_init = function(block) {
   var dropdown_resolution = block.getFieldValue('resolution');
-  Blockly.Arduino.definitions_.define_camera_include = '#include "esp_camera.h"\n\n#define PWDN_GPIO_NUM 32\n#define RESET_GPIO_NUM -1\n#define XCLK_GPIO_NUM 0\n#define SIOD_GPIO_NUM 26\n#define SIOC_GPIO_NUM 27\n#define Y9_GPIO_NUM 35\n#define Y8_GPIO_NUM 34\n#define Y7_GPIO_NUM 39\n#define Y6_GPIO_NUM 36\n#define Y5_GPIO_NUM 21\n#define Y4_GPIO_NUM 19\n#define Y3_GPIO_NUM 18\n#define Y2_GPIO_NUM 5\n#define VSYNC_GPIO_NUM 25\n#define HREF_GPIO_NUM 23\n#define PCLK_GPIO_NUM 22';
-  Blockly.Arduino.setups_.xlan_camera_init = 'camera_config_t config;\n  config.ledc_channel = LEDC_CHANNEL_0;\n  config.ledc_timer = LEDC_TIMER_0;\n  config.pin_d0 = Y2_GPIO_NUM;\n  config.pin_d1 = Y3_GPIO_NUM;\n  config.pin_d2 = Y4_GPIO_NUM;\n  config.pin_d3 = Y5_GPIO_NUM;\n  config.pin_d4 = Y6_GPIO_NUM;\n  config.pin_d5 = Y7_GPIO_NUM;\n  config.pin_d6 = Y8_GPIO_NUM;\n  config.pin_d7 = Y9_GPIO_NUM;\n  config.pin_xclk = XCLK_GPIO_NUM;\n  config.pin_pclk = PCLK_GPIO_NUM;\n  config.pin_vsync = VSYNC_GPIO_NUM;\n  config.pin_href = HREF_GPIO_NUM;\n  config.pin_sscb_sda = SIOD_GPIO_NUM;\n  config.pin_sscb_scl = SIOC_GPIO_NUM;\n  config.pin_pwdn = PWDN_GPIO_NUM;\n  config.pin_reset = RESET_GPIO_NUM;\n  config.xclk_freq_hz = 20000000;\n  config.pixel_format = PIXFORMAT_JPEG;\n  config.frame_size = ' + dropdown_resolution + ';\n  config.fb_count = 2;\n  config.jpeg_quality = 10;\n\n  esp_err_t err = esp_camera_init(&config);\n  if (err != ESP_OK)\n    return;\n';
+  Blockly.Arduino.definitions_.define_camera_include = '#include "esp_camera.h"\n\n#define PWDN_GPIO_NUM 32\n#define RESET_GPIO_NUM -1\n#define XCLK_GPIO_NUM 0\n#define SIOD_GPIO_NUM 26\n#define SIOC_GPIO_NUM 27\n#define Y9_GPIO_NUM 35\n#define Y8_GPIO_NUM 34\n#define Y7_GPIO_NUM 39\n#define Y6_GPIO_NUM 36\n#define Y5_GPIO_NUM 21\n#define Y4_GPIO_NUM 19\n#define Y3_GPIO_NUM 18\n#define Y2_GPIO_NUM 5\n#define VSYNC_GPIO_NUM 25\n#define HREF_GPIO_NUM 23\n#define PCLK_GPIO_NUM 22\nsensor_t *cam;';
+  Blockly.Arduino.setups_.xlan_camera_init = 'camera_config_t config;\n  config.ledc_channel = LEDC_CHANNEL_0;\n  config.ledc_timer = LEDC_TIMER_0;\n  config.pin_d0 = Y2_GPIO_NUM;\n  config.pin_d1 = Y3_GPIO_NUM;\n  config.pin_d2 = Y4_GPIO_NUM;\n  config.pin_d3 = Y5_GPIO_NUM;\n  config.pin_d4 = Y6_GPIO_NUM;\n  config.pin_d5 = Y7_GPIO_NUM;\n  config.pin_d6 = Y8_GPIO_NUM;\n  config.pin_d7 = Y9_GPIO_NUM;\n  config.pin_xclk = XCLK_GPIO_NUM;\n  config.pin_pclk = PCLK_GPIO_NUM;\n  config.pin_vsync = VSYNC_GPIO_NUM;\n  config.pin_href = HREF_GPIO_NUM;\n  config.pin_sscb_sda = SIOD_GPIO_NUM;\n  config.pin_sscb_scl = SIOC_GPIO_NUM;\n  config.pin_pwdn = PWDN_GPIO_NUM;\n  config.pin_reset = RESET_GPIO_NUM;\n  config.xclk_freq_hz = 20000000;\n  config.pixel_format = PIXFORMAT_JPEG;\n  config.frame_size = ' + dropdown_resolution + ';\n  config.fb_count = 2;\n  config.jpeg_quality = 10;\n\n  esp_err_t err = esp_camera_init(&config);\n  if (err != ESP_OK)\n    return;\n  cam = esp_camera_sensor_get();';
   var code = '';
 
   return code;
 };
 
+Blockly.Arduino.xlan_camera_brightness = function(block) {
+  var dropdown_brightness = block.getFieldValue('brightness');
+  var code = 'cam->set_brightness(cam, ' + dropdown_brightness + ');';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_camera_special_effect = function(block) {
+  var dropdown_sp_effect = block.getFieldValue('sp_effect');
+  var code = 'cam->set_special_effect(cam, ' + dropdown_sp_effect + ');';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_camera_wb_mode = function(block) {
+  var dropdown_wb_mode = block.getFieldValue('wb_mode');
+  var code = 'cam->set_whitebal(cam, ' + dropdown_wb_mode + ');';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_camera_v_flip = function(block) {
+  var dropdown_v_flip = block.getFieldValue('v_flip');
+  var code = 'cam->set_vflip(cam, ' + dropdown_v_flip + ');';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_camera_h_mirror = function(block) {
+  var dropdown_h_mirror = block.getFieldValue('h_mirror');
+  var code = 'cam->set_hmirror(cam, ' + dropdown_h_mirror + ');';
+
+  return code;
+};
+
 Blockly.Arduino.xlan_camera_capture_images = function(block) {
-  var code = 'camera_fb_t *fb = esp_camera_fb_get();\nif (!fb)\n  return;\n';
+  var code = '\ncamera_fb_t *fb = esp_camera_fb_get();\nif (!fb)\n  return;\n';
 
   return code;
 };
