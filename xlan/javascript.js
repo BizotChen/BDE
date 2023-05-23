@@ -103,8 +103,7 @@ Blockly.Arduino.xlan_camera_init = function(block) {
 };
 
 Blockly.Arduino.xlan_camera_capture_images = function(block) {
-  
-  var code = '';
+  var code = 'camera_fb_t *fb = esp_camera_fb_get();\n  if (!fb)\n    return;\n';
 
   return code;
 };
