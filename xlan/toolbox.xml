@@ -18,6 +18,11 @@
       <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
     </block>
   </category>
+  <category name="LINE">
+    <block type="xlan_set_line_token"></block>
+    <block type="xlan_send_line_msg"></block>
+    <block type="xlan_send_line_msg_with_image"></block>
+  </category>
   <category name="MMShield">
     <block type="mmshield_init"></block>
     <category name="Motor">

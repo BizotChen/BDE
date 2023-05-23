@@ -1,6 +1,7 @@
+//Serial
 Blockly.Arduino.xlan_serial_init = function(block) {
   var dropdown_baud = block.getFieldValue('baud');
-  Blockly.Arduino.setups_['xlan_serial_init'] = 'Serial.begin(' + dropdown_baud + ');';
+  Blockly.Arduino.setups_.xlan_serial_init = 'Serial.begin(' + dropdown_baud + ');';
   var code = '';
 
   return code;
@@ -41,10 +42,11 @@ Blockly.Arduino.xlan_serial_read_an_inline_string = function(block) {
   return code;
 };
 
+//BLE
 Blockly.Arduino.xlan_ble_serial_init = function(block) {
-  Blockly.Arduino.definitions_['xlan_ble_serial_init'] = '#include <BluetoothSerial.h>\nBluetoothSerial BLESerial;';
+  Blockly.Arduino.definitions_.xlan_ble_serial_init = '#include <BluetoothSerial.h>\nBluetoothSerial BLESerial;';
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  Blockly.Arduino.setups_['xlan_ble_serial_init'] = 'BLESerial.begin(' + value_text + ');';
+  Blockly.Arduino.setups_.xlan_ble_serial_init = 'BLESerial.begin(' + value_text + ');';
   var code = '';
 
   return code;
@@ -64,14 +66,42 @@ Blockly.Arduino.xlan_ble_serial_read_a_char = function(block) {
   return code;
 };
 
-Blockly.Arduino.mmshield_init = function(block) {
-  Blockly.Arduino.definitions_['mmshield_init'] = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
-  Blockly.Arduino.setups_['mmshield_init'] = 'mm.Init();';
+//Line
+Blockly.Arduino.xlan_set_line_token = function(block) {
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.definitions_.define_line_include = '#include <WiFiClientSecure.h>';
+  Blockly.Arduino.definitions_.xlan_set_line_token = 'String lineToken = "' + value_text + '";\nWiFiClientSecure client_tcp;';
   var code = '';
 
   return code;
 };
 
+Blockly.Arduino.xlan_send_line_msg = function(block) {
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String myMsg) {\n  myMsg.replace("%","%25");\n  myMsg.replace("&","%26");\n  myMsg.replace("§","&");\n  myMsg.replace("\\n","\n");\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println("Content-Length: " + String(myMsg.length()));\n    client_tcp.println();\n    client_tcp.println(myMsg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
+  var code = 'sendLineMsg(" + value_text + ");';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_send_line_msg_with_image = function(block) {
+  var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.definitions_.xlan_set_line_msg_with_image = 'void sendLineMsgWithImage(String msg, camera_fb_t *fb) {\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    String head = "--Cusboundary\r\nContent-Disposition: form-data;";\n    head += "name=\"message\"; \r\n\r\n" + msg + "\r\n";\n    head += "--Cusboundary\r\n";\n    head += "Content-Disposition: form-data;name=\"imageFile\";";\n    head += "filename=\"esp32-cam.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n";\n\n        String tail = "\r\n--Cusboundary--\r\n";\n    uint16_t imageLen = fb->len;\n    uint16_t extraLen = head.length() + tail.length();\n    uint16_t totalLen = imageLen + extraLen;\n\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Length: " + String(totalLen));\n    client_tcp.println("Content-Type: multipart/form-data;boundary=Cusboundary");\n    client_tcp.println();\n    client_tcp.print(head);\n    uint8_t *fbBuf = fb->buf;\n    size_t fbLen = fb->len;\n\n    for (size_t n = 0; n < fbLen; n = n + 2048)\n    {\n      if (n + 2048 < fbLen)\n      {\n        client_tcp.write(fbBuf, 2048);\n        fbBuf += 2048;\n      }\n      else if (fbLen % 2048 > 0)\n      {\n        size_t remainder = fbLen % 2048;\n        client_tcp.write(fbBuf, remainder);\n      }\n    }\n    client_tcp.print(tail);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
+  var code = 'camera_fb_t *fb = esp_camera_fb_get();\n    if (fb)\n    {\n      sendLineMsgWithImage("' + value_text + '", fb);\n      esp_camera_fb_return(fb);\n    }\n';
+
+  return code;
+};
+
+//MMShield32
+Blockly.Arduino.mmshield_init = function(block) {
+  Blockly.Arduino.definitions_.mmshield_init = '#include "XLAN_MMShield.h"\nXLAN_MMShield mm = XLAN_MMShield();';
+  Blockly.Arduino.setups_.mmshield_init = 'mm.Init();';
+  var code = '';
+
+  return code;
+};
+
+//Motor
 Blockly.Arduino.mmshield_motor_rotate = function(block) {
   var dropdown_channel = block.getFieldValue('channel');
   var dropdown_dir = block.getFieldValue('dir');
@@ -96,6 +126,7 @@ Blockly.Arduino.mmshield_servo_write = function(block) {
   return code;
 };
 
+//OLED
 Blockly.Arduino.mmshield_oled_flip = function(block) {
   var code = 'display.flipScreenVertically();\n';
 
@@ -121,8 +152,8 @@ Blockly.Arduino.mmshield_oled_clear = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_init = function(block) {
-  Blockly.Arduino.definitions_['mmshield_oled_init'] = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
-  Blockly.Arduino.setups_['mmshield_oled_init'] = 'display.init();';
+  Blockly.Arduino.definitions_.mmshield_oled_init = '#include "SSD1306Wire.h"\nSSD1306Wire display(0x3c, I2C_SDA, I2C_SCL);';
+  Blockly.Arduino.setups_.mmshield_oled_init = 'display.init();';
   var code = '';
 
   return code;
@@ -177,7 +208,7 @@ Blockly.Arduino.i2s_media_input_device_init = function(block) {
   var number_sck = block.getFieldValue('sck');
   var number_ws = block.getFieldValue('ws');
   var number_sd = block.getFieldValue('sd');
-  Blockly.Arduino.definitions_.define_i2sMic_include = "#include <driver/i2s.h>\n#include \"SPIFFS.h\"\n#include <SD.h>";
+  Blockly.Arduino.definitions_.define_i2sMic_include = '#include <driver/i2s.h>\n#include "SPIFFS.h"\n#include <SD.h>';
   Blockly.Arduino.definitions_.define_i2sMic_invoke = '#define MIC_SCK ' + number_sck + '\n#define MIC_WS ' + number_ws + '\n#define MIC_SD ' + number_sd + '\n#define I2S_MIC_PORT I2S_NUM_1\n#define RECORD_TIME (recTime)\n#define MIC_SAMPLE_RATE     (16000)\n#define MIC_SAMPLE_BITS     (16)\n#define MIC_READ_LEN        (3 * 1024)\n#define MIC_CHANNEL_NUM     (1)\n#define FLASH_RECORD_SIZE   (MIC_CHANNEL_NUM * MIC_SAMPLE_RATE * MIC_SAMPLE_BITS / 8 * RECORD_TIME)\n\nconst int headerSize = 44;\nint recTime = 5;\nFile wavFile;\n';
   Blockly.Arduino.definitions_.define_SD_CS_invoke = 'int CS_PIN = SS;';
   Blockly.Arduino.definitions_.define_i2sMic_event = 'void i2sMicInit() {\n  i2s_config_t i2s_config = {\n    .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX),\n    .sample_rate = MIC_SAMPLE_RATE,\n    .bits_per_sample = i2s_bits_per_sample_t(MIC_SAMPLE_BITS),\n    .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,\n    .communication_format = i2s_comm_format_t(I2S_COMM_FORMAT_I2S | I2S_COMM_FORMAT_I2S_MSB),\n    .intr_alloc_flags = 0,\n    .dma_buf_count = 64,\n    .dma_buf_len = 1024,\n    .use_apll = 1\n  };\n  i2s_driver_install(I2S_MIC_PORT, &i2s_config, 0, NULL);\n  const i2s_pin_config_t pin_config = {\n    .bck_io_num = MIC_SCK,\n    .ws_io_num = MIC_WS,\n    .data_out_num = -1,\n    .data_in_num = MIC_SD\n  };\n  i2s_set_pin(I2S_MIC_PORT, &pin_config);\n}\n';

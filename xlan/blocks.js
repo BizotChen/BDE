@@ -1,3 +1,4 @@
+//Serial
 Blockly.Blocks.xlan_serial_init = {
   init: function() {
     this.appendDummyInput()
@@ -125,6 +126,49 @@ Blockly.Blocks.xlan_ble_serial_read_a_char = {
   }
 };
 
+//Line
+Blockly.Blocks.xlan_set_line_token = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set a LINE token");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_send_line_msg = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Send a LINE message");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_send_line_msg_with_image = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Send a LINE message with image");
+    this.appendValueInput("TEXT")
+        .setCheck("String");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 //MMShield32
 Blockly.Blocks.mmshield_init = {
   init: function() {
@@ -138,6 +182,7 @@ Blockly.Blocks.mmshield_init = {
   }
 };
 
+//Motor
 Blockly.Blocks.mmshield_motor_rotate = {
   init: function() {
     this.appendDummyInput()
@@ -182,6 +227,7 @@ Blockly.Blocks.mmshield_servo_write = {
   }
 };
 
+//OLED
 Blockly.Blocks.mmshield_oled_flip = {
   init: function() {
     this.appendDummyInput()
