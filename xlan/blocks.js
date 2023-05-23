@@ -118,10 +118,10 @@ Blockly.Blocks.xlan_send_line_msg = {
 Blockly.Blocks.xlan_send_line_msg_with_image = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Send a LINE message with image");
+        .appendField("Send a LINE message");
     this.appendValueInput("TEXT")
         .setCheck("String");
-    this.appendDummyInput();
+    this.appendDummyInput("with image");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(180);
