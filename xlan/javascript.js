@@ -78,7 +78,7 @@ Blockly.Arduino.xlan_set_line_token = function(block) {
 
 Blockly.Arduino.xlan_send_line_msg = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String msg) {\n  myMsg.replace("%","%25");\n  myMsg.replace("&","%26");\n  myMsg.replace("§","&");\n  myMsg.replace("\\\\n","\\n");\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println("Content-Length: " + String(msg.length()));\n    client_tcp.println();\n    client_tcp.println(msg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
+  Blockly.Arduino.definitions_.xlan_set_line_msg = 'void sendLineMsg(String msg) {\n  msg.replace("%","%25");\n  msg.replace("&","%26");\n  msg.replace("§","&");\n  msg.replace("\\\\n","\\n");\n  if (client_tcp.connect("notify-api.line.me", 443)) {\n    client_tcp.println("POST /api/notify HTTP/1.1");\n    client_tcp.println("Connection: close");\n    client_tcp.println("Host: notify-api.line.me");\n    client_tcp.println("Authorization: Bearer " + lineToken);\n    client_tcp.println("Content-Type: application/x-www-form-urlencoded");\n    client_tcp.println("Content-Length: " + String(msg.length()));\n    client_tcp.println();\n    client_tcp.println(msg);\n    client_tcp.println();\n    client_tcp.stop();\n  }\n}\n';
   var code = 'sendLineMsg(' + value_text + ');';
 
   return code;
