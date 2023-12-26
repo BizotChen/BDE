@@ -370,69 +370,110 @@ Blockly.Arduino.motordriver_set_io_freq = function(block) {
 };
 
 Blockly.Arduino.motordriver_set_io_port = function(block) {
+  var gpio = block.getFieldValue('gpio');
+  var voltage = block.getFieldValue('voltage');
+  var code = 'mMotorDriver.setPin(' + gpio + ', ' + voltage + ');';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_set_output_pwm_value = function(block) {
+  var gpio = block.getFieldValue('gpio');
+  var pwm = block.getFieldValue('pwm');
+  var code = 'mMotorDriver.setPin(' + gpio + ', ' + pwm + ');';
 
+  return code;
 };
 
 //RGB
 Blockly.Arduino.motordriver_mixed_rgb_led_color = function(block) {
+  var red = block.getFieldValue('red');
+  var green = block.getFieldValue('green');
+  var blue = block.getFieldValue('blue');
+  Blockly.Arduino.definitions_.motordriver_rgb_led = 'RGBLed *rgb = mMotorDriver.getRGBLed();';
+  Blockly.Arduino.setups_.motordriver_rgb_led = 'rgb->setpin(15);';
+  var code = 'rgb->setColor(1, ' + red + ', ' + green + ', ' + blue + ');\nrgb->show();';
 
+  return code;
 };
 
 //Buzzer
 Blockly.Arduino.motordriver_play_note = function(block) {
+  var code = '';
 
+  return code;
 };
 
 //Motor
 Blockly.Arduino.motordriver_attach_motor = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_motor_rotate = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_stop_motor = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_attach_servo = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_servo_rotate = function(block) {
+  var code = '';
 
+  return code;
 };
 
 //PS2
 Blockly.Arduino.motordriver_init_ps2_receiver = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_button_pressed = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_button_hold = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_left_js_x = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_left_js_y = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_right_js_x = function(block) {
+  var code = '';
 
+  return code;
 };
 
 Blockly.Arduino.motordriver_ps2_right_js_y = function(block) {
+  var code = '';
 
+  return code;
 };
