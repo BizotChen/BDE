@@ -635,7 +635,7 @@ Blockly.Blocks.motordriver_set_io_freq = {
   init: function() {
     this.appendDummyInput()
         .appendField("Setup IO ports output frequency (1~1600Hz)")
-        .appendField(new Blockly.FieldNumber(50, 1, 1600), "pwm");
+        .appendField(new Blockly.FieldNumber(50, 1, 1600), "freq");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(290);

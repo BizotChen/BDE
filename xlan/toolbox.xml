@@ -114,7 +114,7 @@
   <category name="MotorDriverV5">
     <block type="motordriver_init"></block>
     <block type="motordriver_set_io_freq">
-      <field name="pwm">50</field>
+      <field name="freq">50</field>
     </block>
     <block type="motordriver_set_io_port">
       <field name="gpio">S1</field>
