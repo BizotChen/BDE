@@ -266,19 +266,19 @@ Blockly.Arduino.i2s_media_input_device_init = function(block) {
   var code = '';
 
   return code;
-}
+};
 
 Blockly.Arduino.i2s_media_input_device_start = function(block) {
   var code = 'i2sMicInit();\n';
 
   return code;
-}
+};
 
 Blockly.Arduino.i2s_media_input_device_stop = function(block) {
   var code = 'i2s_driver_uninstall(I2S_MIC_PORT);\n';
 
   return code;
-}
+};
 
 Blockly.Arduino.i2s_media_azure_stt = function(block) {
   var dropdown_punctuation = block.getFieldValue('punctuation');
@@ -296,7 +296,7 @@ Blockly.Arduino.i2s_media_azure_stt = function(block) {
   } else {
     return '';
   }
-}
+};
 
 Blockly.Arduino.i2s_media_azure_stt_result = function(block) {
   if (Blockly.Arduino.my_board_type=="ESP32") {
@@ -304,7 +304,7 @@ Blockly.Arduino.i2s_media_azure_stt_result = function(block) {
   } else {
     return ['""', Blockly.Arduino.ORDER_ATOMIC];
   }
-}
+};
 
 //I2S Media Output
 Blockly.Arduino.i2s_media_output_device_init = function(block) {
@@ -327,29 +327,112 @@ Blockly.Arduino.i2s_media_output_device_init = function(block) {
   var code = 'i2sMp3 = new AudioGeneratorMP3();\ni2sWav = new AudioGeneratorWAV();\ni2sOut = new AudioOutputI2S();\ni2sOut->SetPinout(' + number_bclk + ',' + number_lrc + ',' + number_din + ');\ni2sOut->SetGain(gainValue);\n';
 
   return code;
-}
+};
 
 Blockly.Arduino.i2s_media_play_web_radio = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
   var code = 'playWebRadio(' + value_text + ');\n';
 
   return code;
-}
+};
 
 Blockly.Arduino.i2s_media_web_radio_url = function(block) {
   var value_text = '\"' + block.getFieldValue("WEB_RADIO_URL") + '\"';
 
   return [value_text, Blockly.Arduino.ORDER_ATOMIC]
-}
+};
 
 Blockly.Arduino.i2s_media_loop = function(block) {
   return 'i2sMediaLoop();\n';
-}
+};
 
 Blockly.Arduino.i2s_media_google_tts = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, "TEXT", Blockly.Arduino.ORDER_ATOMIC||"");
   var dropdown_lang = block.getFieldValue('lang');
 
   return 'textToSpeech(' + value_text + ', \"' + dropdown_lang + '");\n';
-}
+};
 
+//MotorDriverV5
+Blockly.Arduino.motordriver_init = function(block) {
+  Blockly.Arduino.definitions_.motordriver_init = 'Emakefun_MotorDriver mMotorDriver = Emakefun_MotorDriver(0x60, MOTOR_DRIVER_BOARD_V5);';
+  var code = '';
+
+  return code;
+};
+
+Blockly.Arduino.motordriver_set_io_freq = function(block) {
+  var freq = block.getFieldValue('freq');
+  Blockly.Arduino.setups_.motordriver_set_freq = 'mMotorDriver.begin(' + freq + ');';
+  var code = '';
+
+  return code;
+};
+
+Blockly.Arduino.motordriver_set_io_port = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_set_output_pwm_value = function(block) {
+
+};
+
+//RGB
+Blockly.Arduino.motordriver_mixed_rgb_led_color = function(block) {
+
+};
+
+//Buzzer
+Blockly.Arduino.motordriver_play_note = function(block) {
+
+};
+
+//Motor
+Blockly.Arduino.motordriver_attach_motor = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_motor_rotate = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_stop_motor = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_attach_servo = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_servo_rotate = function(block) {
+
+};
+
+//PS2
+Blockly.Arduino.motordriver_init_ps2_receiver = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_button_pressed = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_button_hold = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_left_js_x = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_left_js_y = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_right_js_x = function(block) {
+
+};
+
+Blockly.Arduino.motordriver_ps2_right_js_y = function(block) {
+
+};
