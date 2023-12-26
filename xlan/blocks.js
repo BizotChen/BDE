@@ -648,7 +648,7 @@ Blockly.Blocks.motordriver_set_io_port = {
   init: function() {
     this.appendDummyInput()
         .appendField("Set IO port")
-        .appendField(new Blockly.FieldDropdown([["S1","S1"], ["S2","S2"], ["S3","S3"], ["S4","S4"], ["S5","S5"], ["S6","S6"], ["S7","S7"], ["S8","S8"]]), "gpio")
+        .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio")
         .appendField(new Blockly.FieldDropdown([["HIGH","HIGH"], ["LOW","LOW"]]), "voltage");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -664,7 +664,7 @@ Blockly.Blocks.motordriver_set_output_pwm_value = {
         .appendField("Set output PWM value (0~4095)")
         .appendField(new Blockly.FieldNumber(1024, 0, 4095), "pwm")
         .appendField("of IO port")
-        .appendField(new Blockly.FieldDropdown([["S1","S1"], ["S2","S2"], ["S3","S3"], ["S4","S4"], ["S5","S5"], ["S6","S6"], ["S7","S7"], ["S8","S8"]]), "gpio");
+        .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(290);
@@ -756,7 +756,7 @@ Blockly.Blocks.motordriver_attach_servo = {
   init: function() {
     this.appendDummyInput()
         .appendField("Attach servo")
-        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio");
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","7"], ["S6","8"], ["S7","5"], ["S8","6"]]), "gpio");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(350);
@@ -769,7 +769,7 @@ Blockly.Blocks.motordriver_servo_rotate = {
   init: function() {
     this.appendDummyInput()
         .appendField("Servo")
-        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio")
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","7"], ["S6","8"], ["S7","5"], ["S8","6"]]), "gpio")
         .appendField("rotates to")
         .appendField(new Blockly.FieldNumber(90, 0, 180), "degree")
         .appendField("degree");
