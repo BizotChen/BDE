@@ -124,20 +124,16 @@
       <field name="pwm">1024</field>
       <field name="gpio">S1</field>
     </block>
-    <category name="RGB LED">
-      <block type="motordriver_mixed_rgb_led_color">
-        <field name="red">150</field>
-        <field name="green">0</field>
-        <field name="blue">0</field>
-      </block>
-    </category>
-    <category name="Buzzer">
-      <block type="motordriver_play_note">
-        <field name="note">C3</field>
-        <field name="n_duration">200</field>
-        <field name="s_duration">50</field>
-      </block>
-    </category>
+    <block type="motordriver_mixed_rgb_led_color">
+      <field name="red">150</field>
+      <field name="green">0</field>
+      <field name="blue">0</field>
+    </block>
+    <block type="motordriver_play_note">
+      <field name="note">C3</field>
+      <field name="n_duration">200</field>
+      <field name="s_duration">50</field>
+    </block>
     <category name="Motor">
       <block type="motordriver_attach_motor">
         <field name="gpio">M1</field>

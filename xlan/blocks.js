@@ -673,7 +673,6 @@ Blockly.Blocks.motordriver_set_output_pwm_value = {
   }
 };
 
-//RGB----------------------------------------------------------------
 Blockly.Blocks.motordriver_mixed_rgb_led_color = {
   init: function() {
     this.appendDummyInput()
@@ -685,13 +684,12 @@ Blockly.Blocks.motordriver_mixed_rgb_led_color = {
         .appendField(new Blockly.FieldNumber(0, 0, 255), "blue");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(310);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
 
-//Buzzer-------------------------------------------------------------
 Blockly.Blocks.motordriver_play_note = {
   init: function() {
     this.appendDummyInput()
@@ -704,7 +702,7 @@ Blockly.Blocks.motordriver_play_note = {
         .appendField("millis");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(330);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
