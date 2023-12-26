@@ -355,6 +355,7 @@ Blockly.Arduino.i2s_media_google_tts = function(block) {
 
 //MotorDriverV5
 Blockly.Arduino.motordriver_init = function(block) {
+  Blockly.Arduino.definitions_.motordriver_include = '#include "Emakefun_MotorDriver.h"';
   Blockly.Arduino.definitions_.motordriver_init = 'Emakefun_MotorDriver mMotorDriver = Emakefun_MotorDriver(0x60, MOTOR_DRIVER_BOARD_V5);';
   var code = '';
 
@@ -451,6 +452,7 @@ Blockly.Arduino.motordriver_servo_rotate = function(block) {
 Blockly.Arduino.motordriver_init_ps2_receiver = function(block) {
   Blockly.Arduino.definitions_.motordriver_ps2 = 'PS2X *ps2x;';
   Blockly.Arduino.setups_.motordriver_ps2 = 'ps2x = mMotorDriver.getPS2X();';
+  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = '';
 
   return code;
@@ -458,7 +460,6 @@ Blockly.Arduino.motordriver_init_ps2_receiver = function(block) {
 
 Blockly.Arduino.motordriver_ps2_button_pressed = function(block) {
   var button = block.getFieldValue('button');
-  Blockly.Arduino.loops_.motordriver_button_pressed = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->ButtonPressed(' + button + ')';
 
   return code;
@@ -466,35 +467,30 @@ Blockly.Arduino.motordriver_ps2_button_pressed = function(block) {
 
 Blockly.Arduino.motordriver_ps2_button_hold = function(block) {
   var button = block.getFieldValue('button');
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->Button(' + button + ')';
 
   return code;
 };
 
 Blockly.Arduino.motordriver_ps2_left_js_x = function(block) {
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->Analog(PSS_LX)';
 
   return code;
 };
 
 Blockly.Arduino.motordriver_ps2_left_js_y = function(block) {
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->Analog(PSS_LY)';
 
   return code;
 };
 
 Blockly.Arduino.motordriver_ps2_right_js_x = function(block) {
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->Analog(PSS_RX)';
 
   return code;
 };
 
 Blockly.Arduino.motordriver_ps2_right_js_y = function(block) {
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
   var code = 'ps2x->Analog(PSS_RY)';
 
   return code;
