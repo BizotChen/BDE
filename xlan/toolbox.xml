@@ -111,4 +111,65 @@
       </block>
     </category>
   </category>
+  <category name="MotorDriverV5">
+    <block type="motordriver_init"></block>
+    <block type="motordriver_set_io_freq">
+      <field name="pwm">50</field>
+    </block>
+    <block type="motordriver_set_io_port">
+      <field name="gpio">S1</field>
+      <field name="voltage">HIGH</field>
+    </block>
+    <block type="motordriver_set_output_pwm_value">
+      <field name="pwm">1024</field>
+      <field name="gpio">S1</field>
+    </block>
+    <category name="RGB LED">
+      <block type="motordriver_mixed_rgb_led_color">
+        <field name="red">150</field>
+        <field name="green">0</field>
+        <field name="blue">0</field>
+      </block>
+    </category>
+    <category name="Buzzer">
+      <block type="motordriver_play_note">
+        <field name="note">C3</field>
+        <field name="n_duration">200</field>
+        <field name="s_duration">50</field>
+      </block>
+    </category>
+    <category name="Motor">
+      <block type="motordriver_attach_motor">
+        <field name="gpio">M1</field>
+      </block>
+      <block type="motordriver_motor_rotate">
+        <field name="gpio">M1</field>
+        <field name="direction">FORWARD</field>
+        <field name="speed">100</field>
+      </block>
+      <block type="motordriver_stop_motor">
+        <field name="gpio">M1</field>
+      </block>
+      <block type="motordriver_attach_servo">
+        <field name="gpio">S1</field>
+      </block>
+      <block type="motordriver_servo_rotate">
+        <field name="gpio">S1</field>
+        <field name="degree">90</field>
+      </block>
+    </category>
+    <category name="PS2">
+      <block type="motordriver_init_ps2_receiver"></block>
+      <block type="motordriver_ps2_button_pressed">
+        <field name="button">Up</field>
+      </block>
+      <block type="motordriver_ps2_button_hold">
+        <field name="button">Up</field>
+      </block>
+      <block type="motordriver_ps2_left_js_x"></block>
+      <block type="motordriver_ps2_left_js_y"></block>
+      <block type="motordriver_ps2_right_js_x"></block>
+      <block type="motordriver_ps2_right_js_y"></block>
+    </category>
+  </category>
 </category>

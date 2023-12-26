@@ -710,36 +710,6 @@ Blockly.Blocks.motordriver_play_note = {
   }
 };
 
-//Servo--------------------------------------------------------------
-Blockly.Blocks.motordriver_attach_servo = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Attach servo")
-        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(350);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks.motordriver_servo_rotate = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Servo")
-        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio")
-        .appendField("rotates to")
-        .appendField(new Blockly.FieldNumber(90, 0, 180), "degree")
-        .appendField("degree");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(350);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 //Motor--------------------------------------------------------------
 Blockly.Blocks.motordriver_attach_motor = {
   init: function() {
@@ -779,6 +749,35 @@ Blockly.Blocks.motordriver_stop_motor = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(250);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_attach_servo = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Attach servo")
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(350);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_servo_rotate = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Servo")
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio")
+        .appendField("rotates to")
+        .appendField(new Blockly.FieldNumber(90, 0, 180), "degree")
+        .appendField("degree");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(350);
  this.setTooltip("");
  this.setHelpUrl("");
   }
