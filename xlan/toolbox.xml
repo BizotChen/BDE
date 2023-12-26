@@ -1,4 +1,4 @@
-<category name="X-LAN積木" colour="#a5745b">
+<category name="X-LAN Blocks" colour="#a5745b">
   <category name="Serial">
     <block type="xlan_serial_init"></block>
     <block type="xlan_serial_print"></block>

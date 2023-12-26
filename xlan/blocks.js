@@ -797,7 +797,7 @@ Blockly.Blocks.motordriver_init_ps2_receiver = {
 Blockly.Blocks.motordriver_ps2_button_pressed = {
   init: function() {
     this.appendDummyInput()
-        .appendField("The PS2 gamepad button")
+        .appendField("the PS2 gamepad button")
         .appendField(new Blockly.FieldDropdown([["Up","PSB_PAD_UP"], ["Down","PSB_PAD_DOWN"], ["Left","PSB_PAD_LEFT"], ["Right","PSB_PAD_RIGHT"], ["Triangle","PSB_TRIANGLE"], ["Cross","PSB_CROSS"], ["Square","PSB_SQUARE"], ["Circle","PSB_CIRCLE"], ["R1","PSB_R1"], ["R2","PSB_R2"], ["R3","PSB_R3"], ["L1","PSB_L1"], ["L2","PSB_L2"], ["L3","PSB_L3"]]), "button")
         .appendField("is pressed?");
     this.setOutput(true, null);
@@ -810,7 +810,7 @@ Blockly.Blocks.motordriver_ps2_button_pressed = {
 Blockly.Blocks.motordriver_ps2_button_hold = {
   init: function() {
     this.appendDummyInput()
-        .appendField("The PS2 gamepad button")
+        .appendField("the PS2 gamepad button")
         .appendField(new Blockly.FieldDropdown([["Up","PSB_PAD_UP"], ["Down","PSB_PAD_DOWN"], ["Left","PSB_PAD_LEFT"], ["Right","PSB_PAD_RIGHT"], ["Triangle","PSB_TRIANGLE"], ["Cross","PSB_CROSS"], ["Square","PSB_SQUARE"], ["Circle","PSB_CIRCLE"], ["R1","PSB_R1"], ["R2","PSB_R2"], ["R3","PSB_R3"], ["L1","PSB_L1"], ["L2","PSB_L2"], ["L3","PSB_L3"]]), "button")
         .appendField("is hold?");
     this.setOutput(true, null);
@@ -823,7 +823,7 @@ Blockly.Blocks.motordriver_ps2_button_hold = {
 Blockly.Blocks.motordriver_ps2_left_js_x = {
   init: function() {
     this.appendDummyInput()
-        .appendField("X value of PS2 gamepad left joystick");
+        .appendField("x value of PS2 gamepad left joystick");
     this.setOutput(true, null);
     this.setColour(220);
  this.setTooltip("");
@@ -834,7 +834,7 @@ Blockly.Blocks.motordriver_ps2_left_js_x = {
 Blockly.Blocks.motordriver_ps2_left_js_y = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Y value of PS2 gamepad left joystick");
+        .appendField("y value of PS2 gamepad left joystick");
     this.setOutput(true, null);
     this.setColour(220);
  this.setTooltip("");
@@ -845,7 +845,7 @@ Blockly.Blocks.motordriver_ps2_left_js_y = {
 Blockly.Blocks.motordriver_ps2_right_js_x = {
   init: function() {
     this.appendDummyInput()
-        .appendField("X value of PS2 gamepad right joystick");
+        .appendField("x value of PS2 gamepad right joystick");
     this.setOutput(true, null);
     this.setColour(220);
  this.setTooltip("");
@@ -856,7 +856,7 @@ Blockly.Blocks.motordriver_ps2_right_js_x = {
 Blockly.Blocks.motordriver_ps2_right_js_y = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Y value of PS2 gamepad right joystick");
+        .appendField("y value of PS2 gamepad right joystick");
     this.setOutput(true, null);
     this.setColour(220);
  this.setTooltip("");

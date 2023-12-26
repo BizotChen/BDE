@@ -452,7 +452,7 @@ Blockly.Arduino.motordriver_servo_rotate = function(block) {
 Blockly.Arduino.motordriver_init_ps2_receiver = function(block) {
   Blockly.Arduino.definitions_.motordriver_ps2 = 'PS2X *ps2x;';
   Blockly.Arduino.setups_.motordriver_ps2 = 'ps2x = mMotorDriver.getPS2X();';
-  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n';
+  Blockly.Arduino.loops_.motordriver_button_hold = 'static int vibrate = 0;\n  byte PSS_X = 0, PSS_Y = 0;\n  ps2x->read_gamepad(false, vibrate);\n\n';
   var code = '';
 
   return code;
