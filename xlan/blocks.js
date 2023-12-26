@@ -1,4 +1,4 @@
-//Serial
+//Serial-------------------------------------------------------------
 Blockly.Blocks.xlan_serial_init = {
   init: function() {
     this.appendDummyInput()
@@ -84,7 +84,7 @@ Blockly.Blocks.xlan_serial_read_an_inline_string = {
   }
 };
 
-//Line
+//Line---------------------------------------------------------------
 Blockly.Blocks.xlan_set_line_token = {
   init: function() {
     this.appendDummyInput()
@@ -131,7 +131,7 @@ Blockly.Blocks.xlan_send_line_msg_with_image = {
   }
 };
 
-//BLE
+//BLE----------------------------------------------------------------
 Blockly.Blocks.xlan_ble_serial_init = {
   init: function() {
     this.appendDummyInput()
@@ -174,7 +174,7 @@ Blockly.Blocks.xlan_ble_serial_read_a_char = {
   }
 };
 
-//Camera
+//Camera-------------------------------------------------------------
 Blockly.Blocks.xlan_camera_init = {
   init: function() {
     this.appendDummyInput()
@@ -265,7 +265,7 @@ Blockly.Blocks.xlan_camera_capture_images = {
   }
 };
 
-//MMShield32
+//MMShield32---------------------------------------------------------
 Blockly.Blocks.mmshield_init = {
   init: function() {
     this.appendDummyInput()
@@ -278,7 +278,7 @@ Blockly.Blocks.mmshield_init = {
   }
 };
 
-//Motor
+//Motor--------------------------------------------------------------
 Blockly.Blocks.mmshield_motor_rotate = {
   init: function() {
     this.appendDummyInput()
@@ -323,7 +323,7 @@ Blockly.Blocks.mmshield_servo_write = {
   }
 };
 
-//OLED
+//OLED---------------------------------------------------------------
 Blockly.Blocks.mmshield_oled_init = {
   init: function() {
     this.appendDummyInput()
@@ -470,7 +470,7 @@ Blockly.Blocks.mmshield_oled_contrast = {
   }
 };
 
-//I2S Media Input
+//I2S Media Input----------------------------------------------------
 Blockly.Blocks.i2s_media_input_device_init = {
   init: function() {
     this.appendDummyInput()
@@ -543,7 +543,7 @@ Blockly.Blocks.i2s_media_azure_stt_result = {
   }
 };
 
-//I2S Media Output
+//I2S Media Output---------------------------------------------------
 Blockly.Blocks.i2s_media_output_device_init = {
   init: function() {
     this.appendDummyInput()
@@ -613,6 +613,255 @@ Blockly.Blocks.i2s_media_google_tts = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(45);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//MotorDriverV5------------------------------------------------------
+Blockly.Blocks.motordriver_init = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("MotorDriverV5 Initialization");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_set_io_freq = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Setup IO ports output frequency (1~1600Hz)")
+        .appendField(new Blockly.FieldNumber(50, 1, 1600), "pwm");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_set_io_port = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set IO port")
+        .appendField(new Blockly.FieldDropdown([["S1","S1"], ["S2","S2"], ["S3","S3"], ["S4","S4"], ["S5","S5"], ["S6","S6"], ["S7","S7"], ["S8","S8"]]), "gpio")
+        .appendField(new Blockly.FieldDropdown([["HIGH","HIGH"], ["LOW","LOW"]]), "voltage");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_set_output_pwm_value = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set output PWM value (0~4095)")
+        .appendField(new Blockly.FieldNumber(1024, 0, 4095), "pwm")
+        .appendField("of IO port")
+        .appendField(new Blockly.FieldDropdown([["S1","S1"], ["S2","S2"], ["S3","S3"], ["S4","S4"], ["S5","S5"], ["S6","S6"], ["S7","S7"], ["S8","S8"]]), "gpio");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//RGB----------------------------------------------------------------
+Blockly.Blocks.motordriver_mixed_rgb_led_color = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mixed RGB LED color in PWM (0~255) red")
+        .appendField(new Blockly.FieldNumber(150, 0, 255), "red")
+        .appendField(", green")
+        .appendField(new Blockly.FieldNumber(0, 0, 255), "green")
+        .appendField(", blue")
+        .appendField(new Blockly.FieldNumber(0, 0, 255), "blue");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(310);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//Buzzer-------------------------------------------------------------
+Blockly.Blocks.motordriver_play_note = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Play note")
+        .appendField(new Blockly.FieldDropdown([["C2","note_C2"], ["D2","note_D2"], ["E2","note_E2"], ["F2","note_F2"], ["G2","note_G2"], ["A2","note_A2"], ["B2","note_B2"], ["C3","note_C3"], ["D3","note_D3"], ["E3","note_E3"], ["F3","note_F3"], ["G3","note_G3"], ["A3","note_A3"], ["B3","note_B3"], ["C4","note_C4"], ["D4","note_D4"], ["E4","note_E4"], ["F4","note_F4"], ["G4","note_G4"], ["A4","note_A4"], ["B4","note_B4"], ["C5","note_C5"], ["D5","note_D5"], ["E5","note_E5"], ["F5","note_F5"], ["G5","note_G5"], ["A5","note_A5"], ["B5","note_B5"], ["C6","note_C6"], ["D6","note_D6"], ["E6","note_E6"], ["F6","note_F6"], ["G6","note_G6"], ["A6","note_A6"], ["B6","note_B6"], ["C7","note_C7"], ["D7","note_D7"], ["E7","note_E7"], ["F7","note_F7"], ["G7","note_G7"], ["A7","note_A7"], ["B7","note_B7"], ["C8","note_C8"]]), "note")
+        .appendField("in")
+        .appendField(new Blockly.FieldNumber(200, 1, 1000), "n_duration")
+        .appendField("millis with interval")
+        .appendField(new Blockly.FieldNumber(50, 1, 1000), "s_duration")
+        .appendField("millis");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//Servo--------------------------------------------------------------
+Blockly.Blocks.motordriver_attach_servo = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Attach servo")
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(350);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_servo_rotate = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Servo")
+        .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","5"], ["S6","6"], ["S7","7"], ["S8","8"]]), "gpio")
+        .appendField("rotates to")
+        .appendField(new Blockly.FieldNumber(90, 0, 180), "degree")
+        .appendField("degree");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(350);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//Motor--------------------------------------------------------------
+Blockly.Blocks.motordriver_attach_motor = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Attach DC motor")
+        .appendField(new Blockly.FieldDropdown([["M1","1"], ["M2","2"], ["M3","3"], ["M4","4"]]), "gpio");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(250);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_motor_rotate = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("DC motor")
+        .appendField(new Blockly.FieldDropdown([["M1","1"], ["M2","2"], ["M3","3"], ["M4","4"]]), "gpio")
+        .appendField("rotates")
+        .appendField(new Blockly.FieldDropdown([["FORWARD","FORWARD"], ["BACKWARD","BACKWARD"]]), "direction")
+        .appendField("at speed (0~255)")
+        .appendField(new Blockly.FieldNumber(100, 0, 255), "speed");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(250);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_stop_motor = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Stop DC motor")
+        .appendField(new Blockly.FieldDropdown([["M1","1"], ["M2","2"], ["M3","3"], ["M4","4"]]), "gpio");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(250);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//PS2----------------------------------------------------------------
+Blockly.Blocks.motordriver_init_ps2_receiver = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial wireless receiver of PS2 gamepad");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_button_pressed = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Is the PS2 gamepad button")
+        .appendField(new Blockly.FieldDropdown([["Up","PSB_PAD_UP"], ["Down","PSB_PAD_DOWN"], ["Left","PSB_PAD_LEFT"], ["Right","PSB_PAD_RIGHT"], ["Triangle","PSB_TRIANGLE"], ["Cross","PSB_CROSS"], ["Square","PSB_SQUARE"], ["Circle","PSB_CIRCLE"], ["R1","PSB_R1"], ["R2","PSB_R2"], ["R3","PSB_R3"], ["L1","PSB_L1"], ["L2","PSB_L2"], ["L3","PSB_L3"]]), "button")
+        .appendField("pressed?");
+    this.setOutput(true, null);
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_button_hold = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Is the PS2 gamepad button")
+        .appendField(new Blockly.FieldDropdown([["Up","PSB_PAD_UP"], ["Down","PSB_PAD_DOWN"], ["Left","PSB_PAD_LEFT"], ["Right","PSB_PAD_RIGHT"], ["Triangle","PSB_TRIANGLE"], ["Cross","PSB_CROSS"], ["Square","PSB_SQUARE"], ["Circle","PSB_CIRCLE"], ["R1","PSB_R1"], ["R2","PSB_R2"], ["R3","PSB_R3"], ["L1","PSB_L1"], ["L2","PSB_L2"], ["L3","PSB_L3"]]), "button")
+        .appendField("hold?");
+    this.setOutput(true, null);
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_left_js_x = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("X value of PS2 gamepad left joystick");
+    this.setOutput(true, "Int");
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_left_js_y = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Y value of PS2 gamepad left joystick");
+    this.setOutput(true, "Int");
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_right_js_x = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("X value of PS2 gamepad right joystick");
+    this.setOutput(true, "Int");
+    this.setColour(220);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.motordriver_ps2_right_js_y = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Y value of PS2 gamepad right joystick");
+    this.setOutput(true, "Int");
+    this.setColour(220);
  this.setTooltip("");
  this.setHelpUrl("");
   }
