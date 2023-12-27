@@ -363,7 +363,7 @@ Blockly.Arduino.motordriver_init = function(block) {
 };
 
 Blockly.Arduino.motordriver_set_io_freq = function(block) {
-  var freq = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  var freq = Blockly.Arduino.valueToCode(block, 'freq', Blockly.Arduino.ORDER_ATOMIC||"");
   Blockly.Arduino.setups_.motordriver_set_freq = 'mMotorDriver.begin(' + freq + ');';
   var code = '';
 
@@ -379,7 +379,7 @@ Blockly.Arduino.motordriver_set_io_port = function(block) {
 };
 
 Blockly.Arduino.motordriver_set_output_pwm_value = function(block) {
-  var pwm = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  var pwm = Blockly.Arduino.valueToCode(block, 'pwm', Blockly.Arduino.ORDER_ATOMIC||"");
   var gpio = block.getFieldValue('gpio');
   var code = 'mMotorDriver.setPin(' + gpio + ', ' + pwm + ');\n';
 
@@ -387,9 +387,9 @@ Blockly.Arduino.motordriver_set_output_pwm_value = function(block) {
 };
 
 Blockly.Arduino.motordriver_mixed_rgb_led_color = function(block) {
-  var red = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  var green = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  var blue = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  var red = Blockly.Arduino.valueToCode(block, 'red', Blockly.Arduino.ORDER_ATOMIC||"");
+  var green = Blockly.Arduino.valueToCode(block, 'green', Blockly.Arduino.ORDER_ATOMIC||"");
+  var blue = Blockly.Arduino.valueToCode(block, 'blue', Blockly.Arduino.ORDER_ATOMIC||"");
   Blockly.Arduino.definitions_.motordriver_rgb = 'RGBLed *rgb = mMotorDriver.getRGBLed();';
   Blockly.Arduino.setups_.motordriver_rgb = 'rgb->setpin(15);';
   var code = 'rgb->setColor(1, ' + red + ', ' + green + ', ' + blue + ');\nrgb->show();\n';
@@ -399,8 +399,8 @@ Blockly.Arduino.motordriver_mixed_rgb_led_color = function(block) {
 
 Blockly.Arduino.motordriver_play_note = function(block) {
   var note = block.getFieldValue('note');
-  var n_duration = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  var s_duration = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
+  var n_duration = Blockly.Arduino.valueToCode(block, 'n_duration', Blockly.Arduino.ORDER_ATOMIC||"");
+  var s_duration = Blockly.Arduino.valueToCode(block, 's_duration', Blockly.Arduino.ORDER_ATOMIC||"");
   Blockly.Arduino.definitions_.motordriver_buzzer = 'Buzzer *buzzer = mMotorDriver.getBuzzer();';
   var code = 'buzzer->_tone(' + note + ', ' + n_duration + ', ' + s_duration + ');\n';
 
