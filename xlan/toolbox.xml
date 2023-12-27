@@ -16,46 +16,21 @@
     <block type="xlan_send_line_msg"></block>
     <block type="xlan_send_line_msg_with_image"></block>
   </category>
-  <category name="ESP32">
-    <category name="BLE">
-      <block type="xlan_ble_serial_init"></block>
-      <block type="xlan_ble_serial_while_loop"></block>
-      <block type="xlan_ble_serial_read_a_char">
-        <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
-      </block>
-    </category>
-    <category name="Camera">
-      <block type="xlan_camera_init"></block>
-      <block type="xlan_camera_brightness"></block>
-      <block type="xlan_camera_special_effect"></block>
-      <block type="xlan_camera_wb_mode"></block>
-      <block type="xlan_camera_v_flip"></block>
-      <block type="xlan_camera_h_mirror"></block>
-      <block type="xlan_camera_capture_images"></block>
-    </category>
-  </category>
   <category name="MotorDriverV5">
     <block type="motordriver_init"></block>
     <block type="motordriver_set_io_freq">
-      <field name="freq">50</field>
     </block>
     <block type="motordriver_set_io_port">
       <field name="gpio">S1</field>
       <field name="voltage">HIGH</field>
     </block>
     <block type="motordriver_set_output_pwm_value">
-      <field name="pwm">1024</field>
       <field name="gpio">S1</field>
     </block>
     <block type="motordriver_mixed_rgb_led_color">
-      <field name="red">150</field>
-      <field name="green">0</field>
-      <field name="blue">0</field>
     </block>
     <block type="motordriver_play_note">
       <field name="note">C3</field>
-      <field name="n_duration">200</field>
-      <field name="s_duration">50</field>
     </block>
     <category name="Motor">
       <block type="motordriver_attach_motor">
@@ -89,6 +64,24 @@
       <block type="motordriver_ps2_left_js_y"></block>
       <block type="motordriver_ps2_right_js_x"></block>
       <block type="motordriver_ps2_right_js_y"></block>
+    </category>
+  </category>
+  <category name="ESP32">
+    <category name="BLE">
+      <block type="xlan_ble_serial_init"></block>
+      <block type="xlan_ble_serial_while_loop"></block>
+      <block type="xlan_ble_serial_read_a_char">
+        <field name="NAME" id="O_67oKY4H{@*EP*z]mz$">chrCmd</field>
+      </block>
+    </category>
+    <category name="Camera">
+      <block type="xlan_camera_init"></block>
+      <block type="xlan_camera_brightness"></block>
+      <block type="xlan_camera_special_effect"></block>
+      <block type="xlan_camera_wb_mode"></block>
+      <block type="xlan_camera_v_flip"></block>
+      <block type="xlan_camera_h_mirror"></block>
+      <block type="xlan_camera_capture_images"></block>
     </category>
   </category>
   <category name="MMShield">
