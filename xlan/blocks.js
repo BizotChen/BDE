@@ -285,7 +285,7 @@ Blockly.Blocks.mmshield_motor_rotate = {
         .appendField("Rotate motor")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "channel")
         .appendField(new Blockly.FieldDropdown([["FORWARD","FORWARD"], ["REVERSE","REVERSE"]]), "dir")
-        .appendField("at pwm");
+        .appendField("at pwm (0~4095)");
     this.appendValueInput("pwm")
         .setCheck("Number");
     this.appendDummyInput()
@@ -314,7 +314,7 @@ Blockly.Blocks.mmshield_motor_stop = {
 Blockly.Blocks.mmshield_servo_write = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Write pwm value");
+        .appendField("Write pwm value (0~4095)");
     this.appendValueInput("pwm")
         .setCheck("Number");
     this.appendDummyInput()
@@ -456,7 +456,7 @@ Blockly.Blocks.mmshield_oled_display = {
 Blockly.Blocks.mmshield_oled_brightness = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED brightness");
+        .appendField("Set OLED brightness (0~255)");
     this.appendValueInput("brightness")
         .setCheck("Number");
     this.appendDummyInput()
@@ -472,7 +472,7 @@ Blockly.Blocks.mmshield_oled_brightness = {
 Blockly.Blocks.mmshield_oled_contrast = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED contrast");
+        .appendField("Set OLED contrast (0~255)");
     this.appendValueInput("contrast")
         .setCheck("Number");
     this.appendDummyInput()
@@ -529,13 +529,16 @@ Blockly.Blocks.i2s_media_input_device_stop = {
 
 Blockly.Blocks.i2s_media_azure_stt = {
   init: function() {
-    this.appendValueInput("KEY")
-        .setCheck("String")
+    this.appendDummyInput()
         .appendField("Recognize voice to text")
         .appendField(new Blockly.FieldDropdown([["without","false"], ["with","true"]]), "punctuation")
-        .appendField("punctuation in")
-        .appendField(new Blockly.FieldNumber(5, 3, 10), "time")
+        .appendField("punctuation in");
+    this.appendValueInput("time")
+        .setCheck("Number");
+    this.appendDummyInput()
         .appendField("sec(s) via Azure STT with Key");
+    this.appendValueInput("key")
+        .setCheck("String");
     this.appendDummyInput()
         .appendField("in language")
         .appendField(new Blockly.FieldDropdown([["TW","zh-TW"], ["US","en-US"], ["UK","en-GB"], ["Japan","ja-JP"], ["Korea","ko-KR"], ["Frence","fr-FR"], ["German","de-DE"], ["Thailand","th-TH"], ["Vietnum","vi-VN"]]), "lang");
@@ -649,7 +652,7 @@ Blockly.Blocks.motordriver_init = {
 Blockly.Blocks.motordriver_set_io_freq = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Setup IO ports output frequency (1~1600Hz)");
+        .appendField("Setup IO ports output frequency (1~1600)");
     this.appendValueInput("freq")
         .setCheck("Number");
     this.appendDummyInput()
@@ -808,7 +811,7 @@ Blockly.Blocks.motordriver_servo_rotate = {
     this.appendValueInput("degree")
         .setCheck("Number");
     this.appendDummyInput()
-        .appendField("degree");
+        .appendField("degree (0~180)");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(135);
