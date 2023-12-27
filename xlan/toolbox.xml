@@ -18,8 +18,7 @@
   </category>
   <category name="MotorDriverV5">
     <block type="motordriver_init"></block>
-    <block type="motordriver_set_io_freq">
-    </block>
+    <block type="motordriver_set_io_freq"></block>
     <block type="motordriver_set_io_port">
       <field name="gpio">S1</field>
       <field name="voltage">HIGH</field>
@@ -27,8 +26,7 @@
     <block type="motordriver_set_output_pwm_value">
       <field name="gpio">S1</field>
     </block>
-    <block type="motordriver_mixed_rgb_led_color">
-    </block>
+    <block type="motordriver_mixed_rgb_led_color"></block>
     <block type="motordriver_play_note">
       <field name="note">C3</field>
     </block>

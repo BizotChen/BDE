@@ -635,7 +635,7 @@ Blockly.Blocks.motordriver_set_io_freq = {
   init: function() {
     this.appendDummyInput()
         .appendField("Setup IO ports output frequency (1~1600Hz)");
-    this.appendValueInput("freq")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("");
@@ -665,7 +665,7 @@ Blockly.Blocks.motordriver_set_output_pwm_value = {
   init: function() {
     this.appendDummyInput()
         .appendField("Set output PWM value (0~4095)");
-    this.appendValueInput("pwm")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendField("of IO port")
         .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio");
@@ -681,15 +681,15 @@ Blockly.Blocks.motordriver_mixed_rgb_led_color = {
   init: function() {
     this.appendDummyInput()
         .appendField("Mixed RGB LED color in PWM (0~255) red");
-    this.appendValueInput("red")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField(", green");
-    this.appendValueInput("green")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField(", blue");
-    this.appendValueInput("blue")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("");
@@ -707,11 +707,11 @@ Blockly.Blocks.motordriver_play_note = {
         .appendField("Play note")
         .appendField(new Blockly.FieldDropdown([["C2","note_C2"], ["D2","note_D2"], ["E2","note_E2"], ["F2","note_F2"], ["G2","note_G2"], ["A2","note_A2"], ["B2","note_B2"], ["C3","note_C3"], ["D3","note_D3"], ["E3","note_E3"], ["F3","note_F3"], ["G3","note_G3"], ["A3","note_A3"], ["B3","note_B3"], ["C4","note_C4"], ["D4","note_D4"], ["E4","note_E4"], ["F4","note_F4"], ["G4","note_G4"], ["A4","note_A4"], ["B4","note_B4"], ["C5","note_C5"], ["D5","note_D5"], ["E5","note_E5"], ["F5","note_F5"], ["G5","note_G5"], ["A5","note_A5"], ["B5","note_B5"], ["C6","note_C6"], ["D6","note_D6"], ["E6","note_E6"], ["F6","note_F6"], ["G6","note_G6"], ["A6","note_A6"], ["B6","note_B6"], ["C7","note_C7"], ["D7","note_D7"], ["E7","note_E7"], ["F7","note_F7"], ["G7","note_G7"], ["A7","note_A7"], ["B7","note_B7"], ["C8","note_C8"]]), "note")
         .appendField("in");
-    this.appendValueInput("n_duration")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("millis with interval");
-    this.appendValueInput("s_duration")
+    this.appendValueInput("TEXT")
         .setCheck("Number");
     this.appendDummyInput()
         .appendField("millis");
