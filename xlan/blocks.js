@@ -284,7 +284,7 @@ Blockly.Blocks.mmshield_motor_rotate = {
     this.appendDummyInput()
         .appendField("Rotate motor")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "channel")
-        .appendField(new Blockly.FieldDropdown([["forward","FORWARD"], ["reverse","REVERSE"]]), "dir")
+        .appendField(new Blockly.FieldDropdown([["FORWARD","FORWARD"], ["REVERSE","REVERSE"]]), "dir")
         .appendField("at pwm");
     this.appendValueInput("pwm")
         .setCheck("Number");
@@ -386,10 +386,14 @@ Blockly.Blocks.mmshield_oled_show_msg = {
     this.appendValueInput("TEXT")
         .setCheck("String");
     this.appendDummyInput()
-        .appendField("at (")
-        .appendField(new Blockly.FieldNumber(0, 0, 127), "x")
-        .appendField(",")
-        .appendField(new Blockly.FieldNumber(0, 0, 63), "y")
+        .appendField("at (");
+    this.appendValueInput("x")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField(",");
+    this.appendValueInput("y")
+        .setCheck("Number");
+    this.appendDummyInput()
         .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -452,8 +456,11 @@ Blockly.Blocks.mmshield_oled_display = {
 Blockly.Blocks.mmshield_oled_brightness = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED brightness")
-        .appendField(new Blockly.FieldNumber(128, 0, 255), "brightness");
+        .appendField("Set OLED brightness");
+    this.appendValueInput("brightness")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);
@@ -465,8 +472,11 @@ Blockly.Blocks.mmshield_oled_brightness = {
 Blockly.Blocks.mmshield_oled_contrast = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Set OLED contrast")
-        .appendField(new Blockly.FieldNumber(128, 0, 255), "contrast");
+        .appendField("Set OLED contrast");
+    this.appendValueInput("contrast")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(270);

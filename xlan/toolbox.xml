@@ -103,22 +103,15 @@
       <block type="mmshield_oled_set_fontsize">
         <field name="fontsize">ArialMT_Plain_10</field>
       </block>
-      <block type="mmshield_oled_show_msg">
-        <field name="x">0</field>
-        <field name="y">0</field>
-      </block>
+      <block type="mmshield_oled_show_msg"></block>
       <block type="mmshield_oled_clear"></block>
       <block type="mmshield_oled_mirror"></block>
       <block type="mmshield_oled_reset"></block>
       <block type="mmshield_oled_display">
         <field name="switch">1</field>
       </block>
-      <block type="mmshield_oled_brightness">
-        <field name="brightness">128</field>
-      </block>
-      <block type="mmshield_oled_contrast">
-        <field name="contrast">128</field>
-      </block>
+      <block type="mmshield_oled_brightness"></block>
+      <block type="mmshield_oled_contrast"></block>
     </category>
   </category>
   <category name="I2S Media">

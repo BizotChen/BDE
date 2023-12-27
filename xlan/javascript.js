@@ -208,9 +208,9 @@ Blockly.Arduino.mmshield_oled_set_fontsize = function(block) {
 
 Blockly.Arduino.mmshield_oled_show_msg = function(block) {
   var value_text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_ATOMIC||"");
-  var number_x = block.getFieldValue('x');
-  var number_y = block.getFieldValue('y');
-  var code = 'display.drawString(' + number_x + ', ' + number_y + ', String(' + value_text + '));\ndisplay.display();\n';
+  var x = Blockly.Arduino.valueToCode(block, 'x', Blockly.Arduino.ORDER_ATOMIC||"");
+  var y = Blockly.Arduino.valueToCode(block, 'y', Blockly.Arduino.ORDER_ATOMIC||"");
+  var code = 'display.drawString(' + x + ', ' + y + ', String(' + value_text + '));\ndisplay.display();\n';
 
   return code;
 };
@@ -241,15 +241,15 @@ Blockly.Arduino.mmshield_oled_display = function(block) {
 };
 
 Blockly.Arduino.mmshield_oled_brightness = function(block) {
-  var number_brightness = block.getFieldValue('brightness');
-  var code = 'display.setBrightness(' + number_brightness + ');\n';
+  var brightness = Blockly.Arduino.valueToCode(block, 'brightness', Blockly.Arduino.ORDER_ATOMIC||"");
+  var code = 'display.setBrightness(' + brightness + ');\n';
 
   return code;
 };
 
 Blockly.Arduino.mmshield_oled_contrast = function(block) {
-  var number_contrast = block.getFieldValue('contrast');
-  var code = 'display.setContrast(' + number_contrast + ');\n';
+  var contrast = Blockly.Arduino.valueToCode(block, 'contrast', Blockly.Arduino.ORDER_ATOMIC||"");
+  var code = 'display.setContrast(' + contrast + ');\n';
 
   return code;
 };
