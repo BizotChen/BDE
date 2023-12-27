@@ -667,7 +667,8 @@ Blockly.Blocks.motordriver_set_output_pwm_value = {
         .appendField("Set output PWM value (0~4095)");
     this.appendValueInput("TEXT")
         .setCheck("Number");
-    this.appendField("of IO port")
+    this.appendDummyInput()
+        .appendField("of IO port")
         .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
