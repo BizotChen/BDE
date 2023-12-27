@@ -418,7 +418,7 @@ Blockly.Arduino.motordriver_attach_motor = function(block) {
 
 Blockly.Arduino.motordriver_motor_rotate = function(block) {
   var gpio = block.getFieldValue('gpio');
-  var speed = block.getFieldValue('speed');
+  var speed = Blockly.Arduino.valueToCode(block, 'speed', Blockly.Arduino.ORDER_ATOMIC||"");
   var direction = block.getFieldValue('direction');
   var code = 'motor_' + gpio + '->setSpeed(' + speed + ');\nmotor_' + gpio + '->run(' + direction + ');\n';
 
@@ -442,7 +442,7 @@ Blockly.Arduino.motordriver_attach_servo = function(block) {
 
 Blockly.Arduino.motordriver_servo_rotate = function(block) {
   var gpio = block.getFieldValue('gpio');
-  var degree = block.getFieldValue('degree');
+  var degree = Blockly.Arduino.valueToCode(block, 'degree', Blockly.Arduino.ORDER_ATOMIC||"");
   var code = 'servo_' + gpio + '->writeServo(' + degree + ');\n';
 
   return code;

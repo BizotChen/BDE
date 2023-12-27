@@ -745,8 +745,11 @@ Blockly.Blocks.motordriver_motor_rotate = {
         .appendField(new Blockly.FieldDropdown([["M1","1"], ["M2","2"], ["M3","3"], ["M4","4"]]), "gpio")
         .appendField("rotates")
         .appendField(new Blockly.FieldDropdown([["FORWARD","FORWARD"], ["BACKWARD","BACKWARD"]]), "direction")
-        .appendField("at speed (0~255)")
-        .appendField(new Blockly.FieldNumber(100, 0, 255), "speed");
+        .appendField("at speed (0~255)");
+    this.appendValueInput("speed")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(250);
@@ -786,8 +789,10 @@ Blockly.Blocks.motordriver_servo_rotate = {
     this.appendDummyInput()
         .appendField("Servo")
         .appendField(new Blockly.FieldDropdown([["S1","1"], ["S2","2"], ["S3","3"], ["S4","4"], ["S5","7"], ["S6","8"], ["S7","5"], ["S8","6"]]), "gpio")
-        .appendField("rotates to")
-        .appendField(new Blockly.FieldNumber(90, 0, 180), "degree")
+        .appendField("rotates to");
+    this.appendValueInput("degree")
+        .setCheck("Number");
+    this.appendDummyInput()
         .appendField("degree");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

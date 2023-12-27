@@ -37,7 +37,6 @@
       <block type="motordriver_motor_rotate">
         <field name="gpio">M1</field>
         <field name="direction">FORWARD</field>
-        <field name="speed">100</field>
       </block>
       <block type="motordriver_stop_motor">
         <field name="gpio">M1</field>
@@ -47,7 +46,6 @@
       </block>
       <block type="motordriver_servo_rotate">
         <field name="gpio">S1</field>
-        <field name="degree">90</field>
       </block>
     </category>
     <category name="PS2">
