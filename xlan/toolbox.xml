@@ -86,13 +86,11 @@
       <block type="mmshield_motor_rotate">
         <field name="channel">1</field>
         <field name="dir">FORWARD</field>
-        <field name="pwm">2048</field>
       </block>
       <block type="mmshield_motor_stop">
         <field name="channel">1</field>
       </block>
       <block type="mmshield_servo_write">
-        <field name="pwm">375</field>
         <field name="channel">1</field>
       </block>
     </category>

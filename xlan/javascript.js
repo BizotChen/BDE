@@ -156,8 +156,8 @@ Blockly.Arduino.mmshield_init = function(block) {
 Blockly.Arduino.mmshield_motor_rotate = function(block) {
   var dropdown_channel = block.getFieldValue('channel');
   var dropdown_dir = block.getFieldValue('dir');
-  var number_pwm = block.getFieldValue('pwm');
-  var code = 'mm.RotateMotor(' + dropdown_channel + ', ' + dropdown_dir + ', ' + number_pwm + ');\n';
+  var pwm = Blockly.Arduino.valueToCode(block, 'pwm', Blockly.Arduino.ORDER_ATOMIC||"");
+  var code = 'mm.RotateMotor(' + dropdown_channel + ', ' + dropdown_dir + ', ' + pwm + ');\n';
 
   return code;
 };
@@ -170,9 +170,9 @@ Blockly.Arduino.mmshield_motor_stop = function(block) {
 };
 
 Blockly.Arduino.mmshield_servo_write = function(block) {
-  var number_pwm = block.getFieldValue('pwm');
+  var pwm = Blockly.Arduino.valueToCode(block, 'pwm', Blockly.Arduino.ORDER_ATOMIC||"");
   var dropdown_channel = block.getFieldValue('channel');
-  var code = 'mm.WritePWM(' + dropdown_channel + ', ' + number_pwm + ');\n';
+  var code = 'mm.WritePWM(' + dropdown_channel + ', ' + pwm + ');\n';
 
   return code;
 };
