@@ -763,7 +763,7 @@ Blockly.Blocks.motordriver_motor_rotate = {
         .appendField(new Blockly.FieldDropdown([["M1","1"], ["M2","2"], ["M3","3"], ["M4","4"]]), "gpio")
         .appendField("rotates")
         .appendField(new Blockly.FieldDropdown([["FORWARD","FORWARD"], ["BACKWARD","BACKWARD"]]), "direction")
-        .appendField("at speed (0~255)");
+        .appendField("at speed (0~4095)");
     this.appendValueInput("speed")
         .setCheck("Number");
     this.appendDummyInput()
