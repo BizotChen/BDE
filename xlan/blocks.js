@@ -669,10 +669,8 @@ Blockly.Blocks.motordriver_set_io_port = {
   init: function() {
     this.appendDummyInput()
         .appendField("Set IO port")
-        .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio");
-    this.appendDummyInput()
-        .appendField("to");
-    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["S1","0"], ["S2","1"], ["S3","14"], ["S4","15"], ["S5","3"], ["S6","6"], ["S7","9"], ["S8","12"]]), "gpio")
+        .appendField("to")
         .appendField(new Blockly.FieldDropdown([["HIGH","HIGH"], ["LOW","LOW"]]), "voltage");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
