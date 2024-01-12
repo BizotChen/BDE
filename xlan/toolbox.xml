@@ -1,5 +1,5 @@
 <category name="X-LAN Blocks" colour="#a5745b">
-  <category name="Serial">
+  <category name="Digital IO">
     <block type="xlan_init_a_button"></block>
     <block type="xlan_init_two_buttons"></block>
     <block type="xlan_button_pressed"></block>

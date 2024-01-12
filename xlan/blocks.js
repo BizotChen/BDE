@@ -914,7 +914,7 @@ Blockly.Blocks.xlan_init_a_button = {
     this.appendDummyInput();
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(110);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -933,7 +933,7 @@ Blockly.Blocks.xlan_init_two_buttons = {
     this.appendDummyInput();
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(110);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -948,7 +948,7 @@ Blockly.Blocks.xlan_button_pressed = {
     this.appendDummyInput()
         .appendField("is pressed?");
     this.setOutput(true, null);
-    this.setColour(0);
+    this.setColour(110);
  this.setTooltip("");
  this.setHelpUrl("");
   }
