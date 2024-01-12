@@ -903,3 +903,53 @@ Blockly.Blocks.motordriver_ps2_right_js_y = {
  this.setHelpUrl("");
   }
 };
+
+//Digital I/O--------------------------------------------------------
+Blockly.Blocks.xlan_init_a_button = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial a button with pin");
+    this.appendValueInput("pin")
+        .setCheck("Number");
+    this.appendDummyInput();
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_init_two_buttons = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Initial two buttons with pins");
+    this.appendValueInput("pin1")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField(",");
+    this.appendValueInput("pin2")
+        .setCheck("Number");
+    this.appendDummyInput();
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks.xlan_button_pressed = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("the button connected with pin");
+    this.appendValueInput("pin")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("is pressed?");
+    this.setOutput(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

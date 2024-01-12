@@ -495,3 +495,32 @@ Blockly.Arduino.motordriver_ps2_right_js_y = function(block) {
 
   return code;
 };
+
+//Digital I/O
+Blockly.Arduino.xlan_init_a_button = function(block) {
+  var pin = Blockly.Arduino.valueToCode(block, 'pin', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.definitions_.define_button_include = '#include <XLAN_Button.h>';
+  Blockly.Arduino.definitions_.initial_a_button = 'XLAN_Button button(' + pin + ');';
+  Blockly.Arduino.setups_.initial_a_button = 'button.Init();';
+  var code = '';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_init_two_buttons = function(block) {
+  var pin1 = Blockly.Arduino.valueToCode(block, 'pin1', Blockly.Arduino.ORDER_ATOMIC||"");
+  var pin2 = Blockly.Arduino.valueToCode(block, 'pin2', Blockly.Arduino.ORDER_ATOMIC||"");
+  Blockly.Arduino.definitions_.define_button_include = '#include <XLAN_Button.h>';
+  Blockly.Arduino.definitions_.initial_two_buttons = 'XLAN_Button button(' + pin1 + ',' + pin2 + ');';
+  Blockly.Arduino.setups_.initial_two_buttons = 'button.Init();';
+  var code = '';
+
+  return code;
+};
+
+Blockly.Arduino.xlan_button_pressed = function(block) {
+  var pin = Blockly.Arduino.valueToCode(block, 'pin', Blockly.Arduino.ORDER_ATOMIC||"");
+  var code = 'button.CheckButton(' + pin + ')';
+
+  return code;
+};
